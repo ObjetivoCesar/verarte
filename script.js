@@ -108,15 +108,35 @@ const catInfo = (catId) => CATEGORY_DISPLAY.find(c => c.id === catId);
 function initNavbar() {
     const hamburger = $('#nav-hamburger');
     const links = $('.nav-links');
+
+    // Create a close button inside the mobile menu
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'mobile-menu-close';
+    closeBtn.innerHTML = '✕';
+    closeBtn.setAttribute('aria-label', 'Cerrar menú');
+    links.insertBefore(closeBtn, links.firstChild);
+
+    function closeMenu() {
+        links.classList.remove('mobile-open');
+        document.body.style.overflow = '';
+    }
+
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             const isOpen = links.classList.toggle('mobile-open');
             document.body.style.overflow = isOpen ? 'hidden' : '';
         });
-        $$('.nav-links a').forEach(a => a.addEventListener('click', () => {
-            links.classList.remove('mobile-open');
-            document.body.style.overflow = '';
-        }));
+
+        // Close when clicking a link
+        $$('.nav-links a').forEach(a => a.addEventListener('click', closeMenu));
+
+        // Close when clicking the X button
+        closeBtn.addEventListener('click', closeMenu);
+
+        // Close when clicking the backdrop (since nav-links has the ::before overlay)
+        links.addEventListener('click', (e) => {
+            if (e.target === links) closeMenu();
+        });
     }
 }
 
@@ -211,7 +231,7 @@ function openCategoryModal(cat) {
     const prods = PRODUCTS.filter(p => p.cat === cat.id);
     const productListHTML = prods.map(p =>
         `<div class="modal-spec-row">
-      <span class="modal-spec-label">Cod. ${p.code} — ${p.name}</span>
+      <span class="modal-spec-label">${p.name}</span>
       <span class="modal-spec-value">$${p.price.toFixed(2)}</span>
     </div>`
     ).join('');
@@ -263,7 +283,7 @@ function openProductModal(p) {
     <p class="modal-desc">${p.desc || 'Todos los arreglos llevan tarjeta y decoración especial para el destinatario.'}</p>
     <div class="modal-specs">
       <div class="modal-specs-title">Especificaciones</div>
-      <div class="modal-spec-row">
+      <div class="modal-spec-row" style="display:none">
         <span class="modal-spec-label">🏷️ Código</span>
         <span class="modal-spec-value">Cod. ${p.code}</span>
       </div>
