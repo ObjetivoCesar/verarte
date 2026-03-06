@@ -5,7 +5,7 @@
 const CONFIG = {
     GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxRoroADucatz_MaCWUTUBYM8Ao3P4yP4Lnq0zGbPpLoyK6l0BOF8l4m7waXjx3XfhqvQ/exec', // Paste Apps Script Web App URL here after setup
     WHATSAPP_NUMBER: '593999372331',
-    CATALOG_URL: 'https://linktr.ee/VerArteLoja', // Replace with actual Drive PDF link
+    CATALOG_URL: 'public/catalogo.pdf',
     MAPS_URL: 'https://maps.app.goo.gl/ntenis6eNLW2rySBA',
 };
 
@@ -385,17 +385,19 @@ function initForm() {
 
         if (CONFIG.GOOGLE_SCRIPT_URL) {
             try {
-                const res = await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data),
+                // no-cors + text/plain avoids CORS preflight which Apps Script cannot handle
+                await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain' },
+                    body: JSON.stringify(data),
                 });
-                const json = await res.json();
-                if (json.success) {
-                    feedback.className = 'form-feedback success';
-                    feedback.textContent = '✅ ¡Pedido registrado! Verito te contactará pronto. 🌸';
-                    form.reset(); btn.disabled = false; btn.textContent = '✉️ Enviar pedido';
-                    return;
-                }
-            } catch (err) { console.warn('Sheets unavailable, falling back to WA.'); }
+                // Response is opaque in no-cors — assume success if no exception
+                feedback.className = 'form-feedback success';
+                feedback.textContent = '✅ ¡Pedido registrado! Verito te contactará pronto. 🌸';
+                form.reset(); btn.disabled = false; btn.textContent = '✉️ Enviar pedido';
+                return;
+            } catch (err) { console.warn('Sheets unavailable, falling back to WA.', err); }
         }
 
         feedback.className = 'form-feedback success';
@@ -416,7 +418,15 @@ function initReveal() {
 // ─── CATALOG DOWNLOAD ─────────────────────────────────────────────────────
 function initCatalogBtn() {
     $$('.js-catalog-download').forEach(btn => {
-        btn.addEventListener('click', e => { e.preventDefault(); window.open(CONFIG.CATALOG_URL, '_blank'); });
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            const a = document.createElement('a');
+            a.href = CONFIG.CATALOG_URL;
+            a.download = 'Catalogo-VerArteLoja-DiaDelaMujer2026.pdf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
     });
 }
 
