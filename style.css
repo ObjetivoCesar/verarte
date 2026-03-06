@@ -1488,6 +1488,10 @@ footer {
     background: rgba(255, 255, 255, .98);
     backdrop-filter: blur(12px);
     padding: 6rem 2rem 2rem;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
   }
 
   .nav-links.mobile-open a {

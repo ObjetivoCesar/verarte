@@ -109,8 +109,14 @@ function initNavbar() {
     const hamburger = $('#nav-hamburger');
     const links = $('.nav-links');
     if (hamburger) {
-        hamburger.addEventListener('click', () => links.classList.toggle('mobile-open'));
-        $$('.nav-links a').forEach(a => a.addEventListener('click', () => links.classList.remove('mobile-open')));
+        hamburger.addEventListener('click', () => {
+            const isOpen = links.classList.toggle('mobile-open');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+        $$('.nav-links a').forEach(a => a.addEventListener('click', () => {
+            links.classList.remove('mobile-open');
+            document.body.style.overflow = '';
+        }));
     }
 }
 
