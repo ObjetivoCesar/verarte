@@ -383,26 +383,20 @@ function initForm() {
         btn.disabled = true; btn.textContent = 'Enviando…';
         feedback.className = 'form-feedback';
 
+        // Always attempt to save to Google Sheets (fire-and-forget, no-cors)
         if (CONFIG.GOOGLE_SCRIPT_URL) {
-            try {
-                // no-cors + text/plain avoids CORS preflight which Apps Script cannot handle
-                await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'text/plain' },
-                    body: JSON.stringify(data),
-                });
-                // Response is opaque in no-cors — assume success if no exception
-                feedback.className = 'form-feedback success';
-                feedback.textContent = '✅ ¡Pedido registrado! Verito te contactará pronto. 🌸';
-                form.reset(); btn.disabled = false; btn.textContent = '✉️ Enviar pedido';
-                return;
-            } catch (err) { console.warn('Sheets unavailable, falling back to WA.', err); }
+            fetch(CONFIG.GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify(data),
+            }).catch(err => console.warn('Sheets error:', err));
         }
 
+        // Always open WhatsApp — guaranteed delivery to Verito
         feedback.className = 'form-feedback success';
-        feedback.textContent = '📲 Abriendo WhatsApp con tu pedido…';
-        setTimeout(() => window.open(buildWhatsAppFromForm(data), '_blank'), 400);
+        feedback.textContent = '✅ ¡Pedido enviado! Abriendo WhatsApp para confirmarlo con Verito… 🌸';
+        setTimeout(() => window.open(buildWhatsAppFromForm(data), '_blank'), 500);
         form.reset(); btn.disabled = false; btn.textContent = '✉️ Enviar pedido';
     });
 }
