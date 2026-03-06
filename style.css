@@ -324,14 +324,14 @@ h4 {
 
 /* ─── Hero (white, two-column) ──────────────────────────── */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 72px);
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   align-items: center;
   background: var(--white);
   position: relative;
   overflow: hidden;
-  padding-top: 72px;
+  margin-top: 72px;
   /* navbar height */
 }
 
