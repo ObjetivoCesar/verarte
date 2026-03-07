@@ -1532,9 +1532,13 @@ footer {
     display: flex;
   }
 
-  .category-grid,
-  .products-grid {
+  .category-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: .8rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: .8rem;
   }
 

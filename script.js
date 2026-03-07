@@ -12,12 +12,9 @@ const CONFIG = {
 // ─── CATEGORY DEFINITIONS ─────────────────────────────────────────────────
 const CATEGORY_DISPLAY = [
     { id: 'desayunos', label: 'Desayunos', emoji: '🥞', page: 'page_09', priceMin: 20, priceMax: 26 },
-    { id: 'unitarios', label: 'Mini Bouquets', emoji: '🌸', page: 'page_12', priceMin: 2.5, priceMax: 9 },
-    { id: 'small', label: 'Bouquets Small', emoji: '🌺', page: 'page_13', priceMin: 8, priceMax: 15 },
-    { id: 'bouquets', label: 'Bouquets', emoji: '💐', page: 'page_17', priceMin: 12, priceMax: 37 },
+    { id: 'bouquets', label: 'Bouquets', emoji: '💐', page: 'page_17', priceMin: 2.5, priceMax: 37 },
     { id: 'arreglos', label: 'Arreglos Florales', emoji: '🌷', page: 'page_20', priceMin: 20, priceMax: 50 },
     { id: 'vino', label: 'Con Vino', emoji: '🍷', page: 'page_18', priceMin: 25, priceMax: 33 },
-    { id: 'cristal', label: 'Base Cristal', emoji: '💎', page: 'page_22', priceMin: 25, priceMax: 40 },
     { id: 'fruta', label: 'Con Fruta', emoji: '🍓', page: 'page_23', priceMin: 20, priceMax: 35 },
     { id: 'maquillaje', label: 'Con Maquillaje', emoji: '💄', page: 'page_24', priceMin: 23, priceMax: 30 },
 ];
@@ -33,20 +30,19 @@ const PRODUCTS = [
         code: 'DBW2', name: 'Desayuno Beautiful Woman', cat: 'desayunos', price: 20, page: 'page_09', emoji: '🌸',
         desc: 'Caja decorada · Bouquet de Flores · Huma/Tamal · Mini pancito · Jugo · Mantequilla y mermelada · Café · Ensalada de frutas con yogurt · Decoración Día de la Mujer'
     },
-    // UNITARIOS
-    { code: 'BUR1', name: 'Mini Bouquet con 1 Rosa', cat: 'unitarios', price: 2.50, page: 'page_11', emoji: '🌹' },
-    { code: 'BUGI2', name: 'Mini Bouquet con 1 Girasol', cat: 'unitarios', price: 2.50, page: 'page_11', emoji: '🌻' },
-    { code: 'BUR3', name: 'Mini Bouquet con 1 Rosa', cat: 'unitarios', price: 3.50, page: 'page_11', emoji: '🌹' },
-    { code: 'BUGE4', name: 'Mini Bouquet con 1 Gerbera', cat: 'unitarios', price: 3.50, page: 'page_11', emoji: '🌸' },
-    { code: 'BUR5', name: 'Mini Bouquet con Rosa y variedad', cat: 'unitarios', price: 6, page: 'page_12', emoji: '💐' },
-    { code: 'BUR6', name: 'Mini Bouquet con Rosa', cat: 'unitarios', price: 6, page: 'page_12', emoji: '🌹' },
-    { code: 'BUR7', name: 'Mini Bouquet con Rosas', cat: 'unitarios', price: 6, page: 'page_12', emoji: '🌹' },
-    { code: 'BUR8', name: 'Mini Bouquet con Rosas y variedad', cat: 'unitarios', price: 9, page: 'page_12', emoji: '💐' },
-    // SMALL
-    { code: 'BSR1', name: 'Bouquet Small con Rosas y variedad', cat: 'small', price: 8, page: 'page_13', emoji: '🌺' },
-    { code: 'BSR2', name: 'Bouquet Small con Rosas', cat: 'small', price: 8, page: 'page_13', emoji: '🌷' },
-    { code: 'BSGI3', name: 'Bouquet Small Girasol, Rosas y Ferreros', cat: 'small', price: 12, page: 'page_13', emoji: '🌻' },
-    { code: 'BSGE4', name: 'Bouquet Small Girasol, Rosas y Ferreros', cat: 'small', price: 15, page: 'page_13', emoji: '🌻' },
+    // MINI, SMALL & BOUQUETS (MERGED)
+    { code: 'BUR1', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 2.50, page: 'page_11', emoji: '🌹' },
+    { code: 'BUGI2', name: 'Mini Bouquet con 1 Girasol', cat: 'bouquets', price: 2.50, page: 'page_11', emoji: '🌻' },
+    { code: 'BUR3', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 3.50, page: 'page_11', emoji: '🌹' },
+    { code: 'BUGE4', name: 'Mini Bouquet con 1 Gerbera', cat: 'bouquets', price: 3.50, page: 'page_11', emoji: '🌸' },
+    { code: 'BUR5', name: 'Mini Bouquet con Rosa y variedad', cat: 'bouquets', price: 6, page: 'page_12', emoji: '💐' },
+    { code: 'BUR6', name: 'Mini Bouquet con Rosa', cat: 'bouquets', price: 6, page: 'page_12', emoji: '🌹' },
+    { code: 'BUR7', name: 'Mini Bouquet con Rosas', cat: 'bouquets', price: 6, page: 'page_12', emoji: '🌹' },
+    { code: 'BUR8', name: 'Mini Bouquet con Rosas y variedad', cat: 'bouquets', price: 9, page: 'page_12', emoji: '💐' },
+    { code: 'BSR1', name: 'Bouquet Small con Rosas y variedad', cat: 'bouquets', price: 8, page: 'page_13', emoji: '🌺' },
+    { code: 'BSR2', name: 'Bouquet Small con Rosas', cat: 'bouquets', price: 8, page: 'page_13', emoji: '🌷' },
+    { code: 'BSGI3', name: 'Bouquet Small Girasol, Rosas y Ferreros', cat: 'bouquets', price: 12, page: 'page_13', emoji: '🌻' },
+    { code: 'BSGE4', name: 'Bouquet Small Girasol, Rosas y Ferreros', cat: 'bouquets', price: 15, page: 'page_13', emoji: '🌻' },
     // BOUQUETS
     { code: 'BM1', name: 'Bouquet Rosa Pastel y Babyblue', cat: 'bouquets', price: 20, page: 'page_14', emoji: '💐' },
     { code: 'BM2', name: 'Bouquet Mix de Rosa y Chocolates', cat: 'bouquets', price: 20, page: 'page_14', emoji: '🍫' },
@@ -82,11 +78,11 @@ const PRODUCTS = [
     { code: 'AF10', name: 'Arreglo Floral', cat: 'arreglos', price: 28, page: 'page_21', emoji: '🌷' },
     { code: 'AF11', name: 'Arreglo Floral', cat: 'arreglos', price: 35, page: 'page_21', emoji: '🌸' },
     { code: 'AF12', name: 'Arreglo Floral', cat: 'arreglos', price: 30, page: 'page_21', emoji: '🌺' },
-    // BASE CRISTAL
-    { code: 'AC1', name: 'Arreglo con Base de Cristal', cat: 'cristal', price: 25, page: 'page_22', emoji: '💎' },
-    { code: 'AC2', name: 'Arreglo con Base de Cristal', cat: 'cristal', price: 35, page: 'page_22', emoji: '💎' },
-    { code: 'AC3', name: 'Arreglo con Base de Cristal', cat: 'cristal', price: 35, page: 'page_22', emoji: '💎' },
-    { code: 'AC4', name: 'Arreglo con Base de Cristal', cat: 'cristal', price: 40, page: 'page_22', emoji: '💎' },
+    // BASE CRISTAL (MERGED)
+    { code: 'AC1', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 25, page: 'page_22', emoji: '💎' },
+    { code: 'AC2', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 35, page: 'page_22', emoji: '💎' },
+    { code: 'AC3', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 35, page: 'page_22', emoji: '💎' },
+    { code: 'AC4', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 40, page: 'page_22', emoji: '💎' },
     // FRUTA
     { code: 'AFR1', name: 'Arreglo con Fruta', cat: 'fruta', price: 20, page: 'page_23', emoji: '🍓' },
     { code: 'AFR2', name: 'Arreglo con Fruta Especial', cat: 'fruta', price: 22, page: 'page_23', emoji: '🍊' },
