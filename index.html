@@ -191,22 +191,32 @@
             <input id="f-calle2" class="form-control" type="text" placeholder="Calle secundaria">
           </div>
         </div>
-        <div class="form-grid cols-1" style="margin-top:1rem;">
+        <div class="form-grid" style="margin-top:1rem;">
           <div class="form-group">
             <label class="form-label" for="f-referencia">7. Referencia</label>
-            <input id="f-referencia" class="form-control" type="text"
-              placeholder="Ej: junto al parque, frente al banco…">
+            <input id="f-referencia" class="form-control" type="text" placeholder="Ej: junto al parque…">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-distancia">8. Distancia km (entre 0 y 15) <sup>*</sup></label>
+            <div style="display:flex;gap:.5rem;align-items:center;">
+              <input id="f-distancia" class="form-control" type="number" step="0.1" min="0" max="15"
+                placeholder="Ej: 1.5" required>
+              <div id="shipping-result"
+                style="white-space:nowrap;font-weight:700;color:var(--gold);font-size:.85rem;min-width:90px;">
+                Envío: $0.00
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="form-section-label">🎯 Datos de quien recibe</div>
         <div class="form-grid">
           <div class="form-group">
-            <label class="form-label" for="f-destinatario">8. Nombre y apellido <sup>*</sup></label>
+            <label class="form-label" for="f-destinatario">9. Nombre y apellido <sup>*</sup></label>
             <input id="f-destinatario" class="form-control" type="text" placeholder="Nombre de quien recibe" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="f-celular">9. Celular <sup>*</sup></label>
+            <label class="form-label" for="f-celular">10. Celular <sup>*</sup></label>
             <input id="f-celular" class="form-control" type="tel" placeholder="0999 000 000" required>
           </div>
         </div>
@@ -214,11 +224,11 @@
         <div class="form-section-label">🕐 Entrega</div>
         <div class="form-grid">
           <div class="form-group">
-            <label class="form-label" for="f-hora">10. Hora <sup>*</sup></label>
+            <label class="form-label" for="f-hora">11. Hora <sup>*</sup></label>
             <input id="f-hora" class="form-control" type="time" min="07:00" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="f-fecha">11. Fecha <sup>*</sup></label>
+            <label class="form-label" for="f-fecha">12. Fecha <sup>*</sup></label>
             <input id="f-fecha" class="form-control" type="date" required>
           </div>
         </div>
