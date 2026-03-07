@@ -47,11 +47,13 @@ const PRODUCTS = [
         desc: 'Caja decorada · Bouquet de Flores · Huma/Tamal · Mini pancito · Jugo · Mantequilla y mermelada · Café · Ensalada de frutas con yogurt'
     },
 
-    // BOUQUETS UNITARIOS (Page 11-12)
+    // BOUQUETS UNITARIOS (Page 11)
     { code: 'BUR1', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 2.50, page: 'bouquets-unitarios.webp', emoji: '🌹' },
     { code: 'BUGI2', name: 'Mini Bouquet con 1 Girasol', cat: 'bouquets', price: 2.50, page: 'bouquets-unitarios.webp', emoji: '🌻' },
-    { code: 'BUR3', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 3.50, page: 'bouquets-unitarios 3.webp', emoji: '🌹' },
-    { code: 'BUGE4', name: 'Mini Bouquet con 1 Gerbera', cat: 'bouquets', price: 3.50, page: 'bouquets-unitarios 4.webp', emoji: '🌸' },
+    { code: 'BUR3', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 3.50, page: 'bouquets-unitarios.webp', emoji: '🌹' },
+    { code: 'BUGE4', name: 'Mini Bouquet con 1 Gerbera', cat: 'bouquets', price: 3.50, page: 'bouquets-unitarios.webp', emoji: '🌸' },
+
+    // BOUQUETS UNITARIOS (Page 12)
     { code: 'BUR5', name: 'Mini Bouquet con Rosa y variedad', cat: 'bouquets', price: 4, page: 'bouquets-unitarios 2.webp', emoji: '💐' },
     { code: 'BUR6', name: 'Mini Bouquet con Rosa', cat: 'bouquets', price: 4, page: 'bouquets-unitarios 2.webp', emoji: '🌹' },
     { code: 'BUR7', name: 'Mini Bouquet con Rosas', cat: 'bouquets', price: 6, page: 'bouquets-unitarios 2.webp', emoji: '🌹' },
@@ -93,8 +95,8 @@ const PRODUCTS = [
     { code: 'AF3', name: 'Florero de Cristal', cat: 'arreglos', price: 20, page: 'arreglos florales.webp', emoji: '🌸' },
     { code: 'AF4', name: 'Arreglo Floral Grande', cat: 'arreglos', price: 50, page: 'arreglos florales.webp', emoji: '🌻' },
     { code: 'AF5', name: 'Arreglo con Rosas y Fresas con Chocolate', cat: 'arreglos', price: 27, page: 'arreglos florales 2.webp', emoji: '🍓' },
-    { code: 'AF6', name: 'Arreglo Floral Premium', cat: 'arreglos', price: 40, page: 'arreglos florales 2.webp', emoji: '❤️' },
-    { code: 'AF7', name: 'Florero de Cristal con Gerberas', cat: 'arreglos', price: 30, page: 'arreglos florales 2.webp', emoji: '🌺' },
+    { code: 'AF6', name: 'Arreglo Floral Premium', cat: 'arreglos', price: 35, page: 'arreglos florales 2.webp', emoji: '❤️' },
+    { code: 'AF7', name: 'Florero de Cristal con Gerberas', cat: 'arreglos', price: 25, page: 'arreglos florales 2.webp', emoji: '🌺' },
     { code: 'AF8', name: 'Corazón con Ferreros y Cervezas', cat: 'arreglos', price: 49, page: 'arreglos florales 2.webp', emoji: '🌸' },
     { code: 'AF9', name: 'Arreglo Floral Primaveral', cat: 'arreglos', price: 28, page: 'arreglos florales 3.webp', emoji: '💐' },
     { code: 'AF10', name: 'Arreglo Floral Sol y Sombra', cat: 'arreglos', price: 35, page: 'arreglos florales 3.webp', emoji: '🌷' },
@@ -103,8 +105,8 @@ const PRODUCTS = [
 
     // ARREGLOS EN BASE DE CRISTAL (Page 22)
     { code: 'AC1', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 25, page: 'arreglos con base de cristal.webp', emoji: '💎' },
-    { code: 'AC2', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 35, page: 'arreglos con base de cristal.webp', emoji: '💎' },
-    { code: 'AC3', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 35, page: 'arreglos con base de cristal.webp', emoji: '💎' },
+    { code: 'AC2', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 30, page: 'arreglos con base de cristal.webp', emoji: '💎' },
+    { code: 'AC3', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 30, page: 'arreglos con base de cristal.webp', emoji: '💎' },
     { code: 'AC4', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 40, page: 'arreglos con base de cristal.webp', emoji: '💎' },
 
     // FRUTA (Page 23)
