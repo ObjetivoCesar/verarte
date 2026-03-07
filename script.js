@@ -7,6 +7,7 @@ const CONFIG = {
     WHATSAPP_NUMBER: '593999372331',
     CATALOG_URL: 'Catalogo dia de la mujer 2026_20260306_094416_0000.pdf',
     MAPS_URL: 'https://maps.app.goo.gl/ntenis6eNLW2rySBA',
+    STORE_LOCATION: { lat: -4.00104, lng: -79.20039 }, // Loja, EC
 };
 
 // ─── CATEGORY DEFINITIONS ─────────────────────────────────────────────────
@@ -31,10 +32,10 @@ const PRODUCTS = [
         code: 'RE2', name: 'Box Premium Rosa Eterna', cat: 'rosas_eternas', price: 25, page: 'rosas eternas 2.jfif', emoji: '🎁',
         desc: 'Elegante box decorado con rosa eterna natural preservada y detalles especiales. Ideal para un regalo inolvidable.'
     },
-    { code: 'RE_BM1', name: 'Bouquet con Tulipanes', cat: 'rosas_eternas', price: 4, page: 'page_26', emoji: '🌷' },
-    { code: 'RE_BM2', name: 'Bouquet con 1 Rosa', cat: 'rosas_eternas', price: 2.50, page: 'page_26', emoji: '🌹' },
-    { code: 'RE_BML3', name: 'Bouquet con Rosas, Lirios y Chocolates', cat: 'rosas_eternas', price: 10, page: 'page_26', emoji: '🍫' },
-    { code: 'RE_BML4', name: 'Bouquet en Caja con Tulipanes', cat: 'rosas_eternas', price: 17, page: 'page_26', emoji: '🌷' },
+    { code: 'RE_BM1', name: 'Bouquet con Tulipanes', cat: 'rosas_eternas', price: 4, page: 'page_26', emoji: '🌷', desc: 'Precioso bouquet de tulipanes naturales. Código: BM1' },
+    { code: 'RE_BM2', name: 'Bouquet con 1 Rosa', cat: 'rosas_eternas', price: 2.50, page: 'page_26', emoji: '🌹', desc: 'Detalle clásico con una rosa natural. Código: BM2' },
+    { code: 'RE_BML3', name: 'Bouquet con Rosas, Lirios y Chocolates', cat: 'rosas_eternas', price: 10, page: 'page_26', emoji: '🍫', desc: 'Combinación dulce y floral. Código: BML3' },
+    { code: 'RE_BML4', name: 'Bouquet en Caja con Tulipanes', cat: 'rosas_eternas', price: 17, page: 'page_26', emoji: '🌷', desc: 'Elegante presentación en caja con tulipanes. Código: BML4' },
 
     // DESAYUNOS
     {
@@ -130,6 +131,86 @@ const calculateShipping = (d) => {
     if (d < 3.0) return 1.75;
     return 2.00 + Math.floor(d - 3) * 0.25;
 };
+
+// ─── DISTANCE TOOLS ───────────────────────────────────────────────────────
+function calculateGeoDistance(lat, lng) {
+    const { lat: slat, lng: slng } = CONFIG.STORE_LOCATION;
+    const R = 6371; // Earth radius
+    const dLat = (lat - slat) * Math.PI / 180;
+    const dLng = (lng - slng) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(slat * Math.PI / 180) * Math.cos(lat * Math.PI / 180) *
+        Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const crowDistance = R * c;
+
+    // Multiplier for Loja's street grid estimation (approx 1.25x road factor)
+    const streetFactor = 1.25;
+    return (crowDistance * streetFactor).toFixed(1);
+}
+
+let deliveryMap = null;
+let deliveryMarker = null;
+
+function initLocationMap() {
+    const mapBtn = $('#btn-map');
+    const gpsBtn = $('#btn-gps');
+    const container = $('#map-container');
+    const distInput = $('#f-distancia');
+    const shipResult = $('#shipping-result');
+
+    const updateDistance = (lat, lng) => {
+        const d = calculateGeoDistance(lat, lng);
+        distInput.value = d;
+        distInput.dispatchEvent(new Event('input')); // Trigger visual update
+
+        if (deliveryMarker) deliveryMarker.setLatLng([lat, lng]);
+        else deliveryMarker = L.marker([lat, lng], { draggable: true }).addTo(deliveryMap);
+
+        deliveryMap.setView([lat, lng], 15);
+    };
+
+    mapBtn.addEventListener('click', () => {
+        const isOpen = container.style.height !== '0px' && container.style.height !== '';
+        container.style.height = isOpen ? '0px' : '340px';
+
+        if (!isOpen && !deliveryMap) {
+            // Give time for CSS transition before layout
+            setTimeout(() => {
+                const { lat, lng } = CONFIG.STORE_LOCATION;
+                deliveryMap = L.map('delivery-map').setView([lat, lng], 14);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(deliveryMap);
+
+                // Store marker (unmovable)
+                L.marker([lat, lng], {
+                    icon: L.icon({
+                        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
+                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+                    })
+                }).addTo(deliveryMap).bindPopup('<b>Tienda VerArteLoja</b>').openPopup();
+
+                deliveryMap.on('click', (e) => updateDistance(e.latlng.lat, e.latlng.lng));
+            }, 100);
+        }
+    });
+
+    gpsBtn.addEventListener('click', () => {
+        if (!navigator.geolocation) return alert('GPS no soportado en este navegador');
+        gpsBtn.textContent = 'Buscando…';
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                gpsBtn.textContent = '📍 GPS actual';
+                if (container.style.height === '0px' || container.style.height === '') mapBtn.click();
+                updateDistance(pos.coords.latitude, pos.coords.longitude);
+            },
+            () => {
+                gpsBtn.textContent = '📍 GPS actual';
+                alert('No se pudo acceder a tu ubicación. Por favor usa el mapa manualmente.');
+            }
+        );
+    });
+}
 
 // ─── NAVBAR ───────────────────────────────────────────────────────────────
 function initNavbar() {
@@ -449,8 +530,12 @@ function initForm() {
             const val = parseFloat(distInput.value);
             const cost = calculateShipping(val);
             shipResult.textContent = `Envío: $${cost.toFixed(2)}`;
+            shipResult.classList.add('pulse');
+            setTimeout(() => shipResult.classList.remove('pulse'), 500);
         });
     }
+
+    initLocationMap();
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
