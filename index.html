@@ -51,7 +51,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#catalogo">Catálogo</a></li>
       <li><a href="#pedido" class="nav-cta">✉️ Hacer Pedido</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#sucursales">Sucursales</a></li>
     </ul>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú">
       <span></span><span></span><span></span>
@@ -95,10 +95,10 @@
 
     <div class="hero-image">
       <div class="hero-image-blob"></div>
-      <img class="hero-img" src="public/images/hero.jpg" alt="Arreglo floral VerArteLoja" onerror="this.outerHTML=`
+      <img class="hero-img" src="public/images/hero2.png" alt="Arreglo floral VerArteLoja" onerror="this.outerHTML=`
            <div class=\'hero-img-placeholder\'>
              <span>🌹</span>
-             <p style=\'font-size:.8rem;color:var(--text-muted);text-align:center;padding:0 1rem\'>Coloca tu foto en<br><code>public/images/hero.jpg</code></p>
+             <p style=\'font-size:.8rem;color:var(--text-muted);text-align:center;padding:0 1rem\'>Coloca tu foto en<br><code>public/images/hero2.png</code></p>
            </div>`">
     </div>
   </section>
@@ -229,6 +229,10 @@
         <div class="form-grid cols-1">
           <div class="form-group">
             <label class="form-label" for="f-mensaje">Mensaje para la tarjeta</label>
+            <img src="public/images/logo/tarjeta De y Para.webp" alt="Vista previa tarjeta"
+              style="width:100%;max-width:300px;border-radius:var(--r-sm);margin-bottom:1rem;display:block;">
+            <p class="form-label" style="margin-top:.5rem;color:var(--gold);font-size:.85rem;font-weight:700;">O
+              personaliza tu mensaje:</p>
             <textarea id="f-mensaje" class="form-control"
               placeholder="Escribe aquí el mensaje que irá en la tarjeta del regalo…"></textarea>
           </div>
@@ -382,87 +386,81 @@
   </section>
 
   <!-- ═══ ABOUT ═════════════════════════════════════════════════ -->
-  <section id="nosotros" class="about-section">
+  <section id="sucursales" class="branches-section">
     <div class="section-wrap">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <div class="section-tag" style="background:rgba(212,175,55,.15);color:var(--gold);">🌸 Quiénes somos</div>
-          <h2 class="section-title">Verarteloja<br><em style="font-style:italic;color:var(--rose-light)">By Verito
-              Abad</em></h2>
-          <p>Soy VerArteLoja, tu tienda de detalles personalizados en la ciudad de Loja, Ecuador. Creo momentos
-            especiales con regalos únicos para cada ocasión, diseñados con cariño y dedicación.</p>
-          <p>Arreglos florales, bouquets, chocolates, cajas sorpresa, desayunos temáticos y decoración para eventos.
-            Entregas a domicilio · Pedidos por WhatsApp.</p>
-          <div class="about-info">
-            <div class="about-info-item">
-              <strong>📍 Principal:</strong>
-              <span>Bernardo Valdivieso y Miguel Riofrío Esq., junto a la Capilla · Loja</span>
-            </div>
-            <div class="about-info-item">
-              <strong>🏪 Sucursal:</strong>
-              <span>Av. Salvador Bustamante Celi y Trosky Guerrero (junto al GYM Olimpus)</span>
-            </div>
-            <div class="about-info-item">
-              <strong>📱 WhatsApp:</strong>
-              <span><a href="https://wa.me/593999372331" style="color:var(--rose-light)">+593 999 372 331</a></span>
-            </div>
-            <div class="about-info-item">
-              <strong>🕐 Horario:</strong>
-              <span>Lunes a Sábado · 9:00 – 19:00</span>
-            </div>
+      <div class="t-center mb-4 reveal">
+        <div class="section-tag" style="background:rgba(212,175,55,.15);color:var(--gold);">📍 Dónde encontrarnos</div>
+        <h2 class="section-title" style="color:var(--white)">Nuestras Sucursales</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.6)">Visítanos en cualquiera de nuestros dos puntos en la
+          ciudad de Loja.</p>
+      </div>
+
+      <div class="branches-grid">
+        <!-- Casa Matriz / Principal -->
+        <div class="branch-card reveal reveal-d1">
+          <div class="branch-card-header">
+            <h3>Sucursal Principal</h3>
+            <p>Bernardo Valdivieso y Miguel Riofrío Esq., junto a la Capilla.</p>
           </div>
-          <div class="about-social">
-            <a href="https://www.facebook.com/VerArteLoja" target="_blank" rel="noopener" class="social-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-              Facebook
-            </a>
-            <a href="https://www.instagram.com/verarteloja/" target="_blank" rel="noopener" class="social-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-              Instagram
-            </a>
-            <a href="https://www.tiktok.com/@verarteloja" target="_blank" rel="noopener" class="social-btn">TikTok</a>
-            <a href="https://maps.app.goo.gl/ntenis6eNLW2rySBA" target="_blank" rel="noopener" class="social-btn">📍
-              Google Maps</a>
+          <div class="branch-map-preview">
+            <span>📍</span>
+            <a href="https://maps.app.goo.gl/ntenis6eNLW2rySBA" target="_blank" rel="noopener"
+              class="btn btn-primary btn-sm">Abrir Mapa</a>
+          </div>
+          <div class="branch-hours">
+            <div class="hours-item">
+              <strong>Lunes - Sábado:</strong>
+              <span>09:00 AM – 19:00 PM</span>
+            </div>
+            <div class="hours-item" style="opacity:.5">
+              <strong>Domingo:</strong>
+              <span>Cerrado</span>
+            </div>
           </div>
         </div>
 
-        <div class="reveal reveal-d2">
-          <div class="map-box" style="min-height:220px;">
-            <span>📍</span>
-            <strong style="color:rgba(255,255,255,.88);font-family:var(--ff-head);font-size:1.1rem;">Bernardo Valdivieso
-              y<br>Miguel Riofrío Esq.</strong>
-            <p>junto a la Capilla · Loja, Ecuador</p>
-            <a href="https://maps.app.goo.gl/ntenis6eNLW2rySBA" target="_blank" rel="noopener"
-              class="btn btn-ghost-white btn-sm" style="margin-top:.5rem;">
-              📍 Abrir en Google Maps →
-            </a>
+        <!-- Sucursal Amable María -->
+        <div class="branch-card reveal reveal-d2">
+          <div class="branch-card-header">
+            <h3>Sucursal Amable María</h3>
+            <p>Av. Salvador Bustamante Celi y Trosky Guerrero (junto al GYM Olimpus).</p>
           </div>
+          <div class="branch-map-preview sucursal-2">
+            <span>🏙️</span>
+            <a href="https://maps.app.goo.gl/oRhja6YL3DoCoXbr5" target="_blank" rel="noopener"
+              class="btn btn-primary btn-sm">Abrir Mapa</a>
+          </div>
+          <div class="branch-hours">
+            <div class="hours-item">
+              <strong>Lunes - Sábado:</strong>
+              <span>09:00 AM – 19:00 PM</span>
+            </div>
+            <div class="hours-item highlight">
+              <strong>Domingos ✨:</strong>
+              <span>09:00 AM – 14:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          <div class="contact-box">
-            <h3 style="font-family:var(--ff-head);font-size:1.1rem;color:var(--white);margin-bottom:.5rem;">Agreganos a
-              tus contactos 🌸</h3>
-            <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:1rem;text-align:center;">Escanea el QR o
-              descarga nuestro contacto para tenernos siempre a mano.</p>
-
-            <img src="public/Contacto/descarga contacto.png" alt="QR VerArteLoja"
-              style="width:140px;height:140px;border-radius:12px;margin-bottom:1.2rem;background:#fff;padding:8px;">
-
-            <a href="public/Contacto/verarteloja-amte (2).vcf" download="VerarteLoja.vcf" class="btn btn-primary"
-              style="width:100%;justify-content:center;box-shadow:0 6px 20px rgba(194,24,91,.4);">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
-                <polyline points="17 21 17 13 7 13 7 21"></polyline>
-                <polyline points="7 3 7 8 15 8"></polyline>
-              </svg>
-              Guardar Contacto
-            </a>
+      <!-- About / Contact Integration -->
+      <div class="about-contact-wrap reveal" style="margin-top:4rem;">
+        <div class="contact-box-premium">
+          <div class="contact-text">
+            <h3>¿Tienes alguna duda?</h3>
+            <p>Escríbenos directamente para asesorarte con tu detalle personalizado.</p>
+            <div class="about-social" style="margin-top:2rem;">
+              <a href="https://www.facebook.com/VerArteLoja" target="_blank" rel="noopener"
+                class="social-btn">Facebook</a>
+              <a href="https://www.instagram.com/verarteloja/" target="_blank" rel="noopener"
+                class="social-btn">Instagram</a>
+              <a href="https://wa.me/593999372331" target="_blank" rel="noopener" class="social-btn">WhatsApp</a>
+            </div>
+          </div>
+          <div class="contact-qr">
+            <img src="public/Contacto/descarga contacto.png" alt="QR VerArteLoja">
+            <a href="public/Contacto/verarteloja-amte (2).vcf" download="VerarteLoja.vcf" class="btn btn-gold btn-sm"
+              style="margin-top:1rem;">Guardar Contacto</a>
           </div>
         </div>
       </div>
@@ -476,7 +474,7 @@
     <nav class="footer-links">
       <a href="#catalogo">Catálogo</a>
       <a href="#pedido">Hacer Pedido</a>
-      <a href="#nosotros">Nosotros</a>
+      <a href="#sucursales">Sucursales</a>
       <a href="https://wa.me/593999372331" target="_blank">WhatsApp</a>
       <a href="https://maps.app.goo.gl/ntenis6eNLW2rySBA" target="_blank">Google Maps</a>
     </nav>
