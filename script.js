@@ -25,108 +25,110 @@ const CATEGORY_DISPLAY = [
 const PRODUCTS = [
     // DESAYUNOS (Page 8-9)
     {
-        code: 'DGP1', name: 'Desayuno Girl Power', cat: 'desayunos', price: 26, page: 'p08n.webp', emoji: '🥞',
+        code: 'DGP (P8)', name: 'Desayuno Girl Power', cat: 'desayunos', price: 26, page: 'p08n.webp', emoji: '🥞',
         desc: 'Desayunador de madera decorado · Bouquet de Flores · Collage de 3 fotos · Huma/Tamal · Bandeja con mini pancitos · Mantequilla y mermelada · Jugo · Café · Ensalada de frutas con yogurt · Chocolates'
     },
     {
-        code: 'DBW2', name: 'Desayuno Beautiful Woman', cat: 'desayunos', price: 20, page: 'p09n.webp', emoji: '🌸',
+        code: 'DBW (P9)', name: 'Desayuno Beautiful Woman', cat: 'desayunos', price: 20, page: 'p09n.webp', emoji: '🌸',
         desc: 'Caja decorada · Bouquet de Flores · Huma/Tamal · Mini pancito · Jugo · Mantequilla y mermelada · Café · Ensalada de frutas con yogurt'
     },
 
     // BOUQUETS UNITARIOS (Page 11)
-    { code: 'BUR1', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 2.50, page: 'p11n.webp', emoji: '🌹' },
-    { code: 'BUGI2', name: 'Mini Bouquet con 1 Girasol', cat: 'bouquets', price: 2.50, page: 'p11n.webp', emoji: '🌻' },
-    { code: 'BUR3', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 3.50, page: 'p11n.webp', emoji: '🌹' },
-    { code: 'BUGE4', name: 'Mini Bouquet con 1 Gerbera', cat: 'bouquets', price: 3.50, page: 'p11n.webp', emoji: '🌸' },
+    { code: 'BUR1 (P11)', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 2.50, page: 'p11n.webp', emoji: '🌹' },
+    { code: 'BUGI2 (P11)', name: 'Mini Bouquet con 1 Girasol', cat: 'bouquets', price: 2.50, page: 'p11n.webp', emoji: '🌻' },
+    { code: 'BUR3 (P11)', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 3.50, page: 'p11n.webp', emoji: '🌹' },
+    { code: 'BUGE4 (P11)', name: 'Mini Bouquet con 1 Gerbera', cat: 'bouquets', price: 3.50, page: 'p11n.webp', emoji: '🌸' },
 
     // BOUQUETS UNITARIOS (Page 12)
-    { code: 'BUR5', name: 'Mini Bouquet con Rosa y variedad', cat: 'bouquets', price: 4, page: 'p12n.webp', emoji: '💐' },
-    { code: 'BUR6', name: 'Mini Bouquet con Rosa', cat: 'bouquets', price: 4, page: 'p12n.webp', emoji: '🌹' },
-    { code: 'BUR7', name: 'Mini Bouquet con Rosas', cat: 'bouquets', price: 6, page: 'p12n.webp', emoji: '🌹' },
-    { code: 'BUR8', name: 'Mini Bouquet con Rosas y variedad', cat: 'bouquets', price: 6, page: 'p12n.webp', emoji: '💐' },
+    { code: 'BUR5 (P12)', name: 'Mini Bouquet con Rosa y variedad', cat: 'bouquets', price: 4, page: 'p12n.webp', emoji: '💐' },
+    { code: 'BUR6 (P12)', name: 'Mini Bouquet con Rosa', cat: 'bouquets', price: 4, page: 'p12n.webp', emoji: '🌹' },
+    { code: 'BUR7 (P12)', name: 'Mini Bouquet con Rosas', cat: 'bouquets', price: 6, page: 'p12n.webp', emoji: '🌹' },
+    { code: 'BUR8 (P12)', name: 'Mini Bouquet con Rosas y variedad', cat: 'bouquets', price: 6, page: 'p12n.webp', emoji: '💐' },
 
     // BOUQUETS SMALL (Page 13)
-    { code: 'BSR1', name: 'Mini Bouquet con Rosas y variedad', cat: 'bouquets', price: 9, page: 'p13n.webp', emoji: '🌺' },
-    { code: 'BSR2', name: 'Mini Bouquet con Rosas', cat: 'bouquets', price: 9, page: 'p13n.webp', emoji: '🌷' },
-    { code: 'BSGI3', name: 'Mini Bouquet con Girasol, Rosas y Ferreros', cat: 'bouquets', price: 12, page: 'p13n.webp', emoji: '🌻' },
-    { code: 'BSGE4', name: 'Mini Bouquet con Girasol, Rosas y Ferreros', cat: 'bouquets', price: 12, page: 'p13n.webp', emoji: '🌻' },
+    { code: 'BSR1 (P13)', name: 'Mini Bouquet con Rosas y variedad', cat: 'bouquets', price: 9, page: 'p13n.webp', emoji: '🌺' },
+    { code: 'BSR2 (P13)', name: 'Mini Bouquet con Rosas', cat: 'bouquets', price: 9, page: 'p13n.webp', emoji: '🌷' },
+    { code: 'BSGI3 (P13)', name: 'Mini Bouquet con Girasol, Rosas y Ferreros', cat: 'bouquets', price: 12, page: 'p13n.webp', emoji: '🌻' },
+    { code: 'BSGE4 (P13)', name: 'Mini Bouquet con Girasol, Rosas y Ferreros', cat: 'bouquets', price: 12, page: 'p13n.webp', emoji: '🌻' },
 
     // BOUQUETS (Page 14)
-    { code: 'BM1', name: 'Bouquet Rosa Pastel y Babyblue', cat: 'bouquets', price: 15, page: 'p14n.webp', emoji: '💐' },
-    { code: 'BM2', name: 'Bouquet Mix de Rosa y Chocolates', cat: 'bouquets', price: 20, page: 'p14n.webp', emoji: '🍫' },
-    { code: 'BML3', name: 'Bouquet con Rosas, Lirios y Chocolates', cat: 'bouquets', price: 20, page: 'p14n.webp', emoji: '🌸' },
-    { code: 'BML4', name: 'Bouquet con Rosas y lirios', cat: 'bouquets', price: 20, page: 'p14n.webp', emoji: '🍫' },
+    { code: 'BM1 (P14)', name: 'Bouquet Rosa Pastel y Babyblue', cat: 'bouquets', price: 15, page: 'p14n.webp', emoji: '💐' },
+    { code: 'BM2 (P14)', name: 'Bouquet Mix de Rosa y Chocolates', cat: 'bouquets', price: 20, page: 'p14n.webp', emoji: '🍫' },
+    { code: 'BML3 (P14)', name: 'Bouquet con Rosas, Lirios y Chocolates', cat: 'bouquets', price: 20, page: 'p14n.webp', emoji: '🌸' },
+    { code: 'BML4 (P14)', name: 'Bouquet con Rosas y lirios', cat: 'bouquets', price: 20, page: 'p14n.webp', emoji: '🍫' },
 
     // BOUQUETS (Page 28)
-    { code: 'BG1', name: 'Bouquet Especial con chocolates', cat: 'bouquets', price: 20, page: 'p28n.webp', emoji: '🍫' },
-    { code: 'BG2', name: 'Bouquet Designer', cat: 'bouquets', price: 25, page: 'p28n.webp', emoji: '💐' },
-    { code: 'BG3', name: 'Bouquet Premium Rosa y Variedad', cat: 'bouquets', price: 35, page: 'p28n.webp', emoji: '🌹' },
-    { code: 'BG4', name: 'Bouquet con Rosas y variedad', cat: 'bouquets', price: 30, page: 'p28n.webp', emoji: '🌸' },
+    { code: 'BG1 (P28)', name: 'Bouquet Especial con chocolates', cat: 'bouquets', price: 20, page: 'p28n.webp', emoji: '🍫' },
+    { code: 'BG2 (P28)', name: 'Bouquet Designer', cat: 'bouquets', price: 25, page: 'p28n.webp', emoji: '💐' },
+    { code: 'BG3 (P28)', name: 'Bouquet Premium Rosa y Variedad', cat: 'bouquets', price: 35, page: 'p28n.webp', emoji: '🌹' },
+    { code: 'BG4 (P28)', name: 'Bouquet con Rosas y variedad', cat: 'bouquets', price: 30, page: 'p28n.webp', emoji: '🌸' },
 
     // BOUQUETS (Page 30)
-    { code: 'BG5', name: 'Bouquet con Rosa y Ferrero (Globo)', cat: 'bouquets', price: 30, page: 'p30n.webp', emoji: '🎈' },
-    { code: 'BG6', name: 'Bouquet con Rosas y Lirios', cat: 'bouquets', price: 35, page: 'p30n.webp', emoji: '🌸' },
-    { code: 'BG7', name: 'Bouquet con Mix de Flores', cat: 'bouquets', price: 28, page: 'p30n.webp', emoji: '💐' },
-    { code: 'BG8', name: 'Bouquet con Rosas Rosadas', cat: 'bouquets', price: 30, page: 'p30n.webp', emoji: '🌹' },
+    { code: 'BG5 (P30)', name: 'Bouquet con Rosa y Ferrero (Globo)', cat: 'bouquets', price: 30, page: 'p30n.webp', emoji: '🎈' },
+    { code: 'BG6 (P30)', name: 'Bouquet con Rosas y Lirios', cat: 'bouquets', price: 35, page: 'p30n.webp', emoji: '🌸' },
+    { code: 'BG7 (P30)', name: 'Bouquet con Mix de Flores', cat: 'bouquets', price: 28, page: 'p30n.webp', emoji: '💐' },
+    { code: 'BG8 (P30)', name: 'Bouquet con Rosas Rosadas', cat: 'bouquets', price: 30, page: 'p30n.webp', emoji: '🌹' },
 
     // BOUQUETS (Page 17)
-    { code: 'BM12', name: 'Bouquet con Rosa y Ferrero', cat: 'bouquets', price: 37, page: 'p17n.webp', emoji: '🍫' },
-    { code: 'BM13', name: 'Bouquet con Rosa y Lirios', cat: 'bouquets', price: 20, page: 'p17n.webp', emoji: '🌸' },
-    { code: 'BM14', name: 'Bouquet con Chocolates', cat: 'bouquets', price: 25, page: 'p17n.webp', emoji: '🍫' },
-    { code: 'BM15', name: 'Bouquet Especial', cat: 'bouquets', price: 25, page: 'p17n.webp', emoji: '💐' },
+    { code: 'BM12 (P17)', name: 'Bouquet con Rosa y Ferrero', cat: 'bouquets', price: 37, page: 'p17n.webp', emoji: '🍫' },
+    { code: 'BM13 (P17)', name: 'Bouquet con Rosa y Lirios', cat: 'bouquets', price: 20, page: 'p17n.webp', emoji: '🌸' },
+    { code: 'BM14 (P17)', name: 'Bouquet con Chocolates', cat: 'bouquets', price: 25, page: 'p17n.webp', emoji: '🍫' },
+    { code: 'BM15 (P17)', name: 'Bouquet Especial', cat: 'bouquets', price: 25, page: 'p17n.webp', emoji: '💐' },
 
     // ARREGLOS CON VINO (Page 18)
-    { code: 'AV1', name: 'Arreglo con Vino y Girasoles', cat: 'vino', price: 30, page: 'p18n.webp', emoji: '🍷' },
-    { code: 'AV2', name: 'Arreglo con Vino y Chocolates', cat: 'vino', price: 30, page: 'p18n.webp', emoji: '🍷' },
-    { code: 'AV3', name: 'Arreglo con Vino, Rosas y Chocolates', cat: 'vino', price: 25, page: 'p18n.webp', emoji: '🍷' },
-    { code: 'AV4', name: 'Arreglo con Vino', cat: 'vino', price: 33, page: 'p18n.webp', emoji: '🍾' },
+    { code: 'AV1 (P18)', name: 'Arreglo con Vino y Girasoles', cat: 'vino', price: 30, page: 'p18n.webp', emoji: '🍷' },
+    { code: 'AV2 (P18)', name: 'Arreglo con Vino y Chocolates', cat: 'vino', price: 30, page: 'p18n.webp', emoji: '🍷' },
+    { code: 'AV3 (P18)', name: 'Arreglo con Vino, Rosas y Chocolates', cat: 'vino', price: 25, page: 'p18n.webp', emoji: '🍷' },
+    { code: 'AV4 (P18)', name: 'Arreglo con Vino', cat: 'vino', price: 33, page: 'p18n.webp', emoji: '🍾' },
 
     // ARREGLOS FLORALES (Page 19)
-    { code: 'AF1', name: 'Florero de Cristal', cat: 'arreglos', price: 22, page: 'p19n.webp', emoji: '🌷' },
-    { code: 'AF2', name: 'Arreglo Floral', cat: 'arreglos', price: 25, page: 'p19n.webp', emoji: '🌸' },
-    { code: 'AF3', name: 'Florero de Cristal', cat: 'arreglos', price: 20, page: 'p19n.webp', emoji: '🌸' },
-    { code: 'AF4', name: 'Arreglo Floral Grande', cat: 'arreglos', price: 50, page: 'p19n.webp', emoji: '🌻' },
+    { code: 'AF1 (P19)', name: 'Florero de Cristal', cat: 'arreglos', price: 22, page: 'p19n.webp', emoji: '🌷' },
+    { code: 'AF2 (P19)', name: 'Arreglo Floral', cat: 'arreglos', price: 25, page: 'p19n.webp', emoji: '🌸' },
+    { code: 'AF3 (P19)', name: 'Florero de Cristal', cat: 'arreglos', price: 20, page: 'p19n.webp', emoji: '🌸' },
+    { code: 'AF4 (P19)', name: 'Arreglo Floral Grande', cat: 'arreglos', price: 50, page: 'p19n.webp', emoji: '🌻' },
 
     // ARREGLOS FLORALES (Page 20)
-    { code: 'AF5', name: 'Arreglo con Rosas y Fresas con Chocolate', cat: 'arreglos', price: 27, page: 'p20n.webp', emoji: '🍓' },
-    { code: 'AF6', name: 'Arreglo Floral Premium', cat: 'arreglos', price: 35, page: 'p20n.webp', emoji: '❤️' },
-    { code: 'AF7', name: 'Florero de Cristal con Gerberas', cat: 'arreglos', price: 25, page: 'p20n.webp', emoji: '🌺' },
-    { code: 'AF8', name: 'Corazón con Ferreros y Cervezas', cat: 'arreglos', price: 49, page: 'p20n.webp', emoji: '🌸' },
+    { code: 'AF5 (P20)', name: 'Arreglo con Rosas y Fresas con Chocolate', cat: 'arreglos', price: 27, page: 'p20n.webp', emoji: '🍓' },
+    { code: 'AF6 (P20)', name: 'Arreglo Floral Premium', cat: 'arreglos', price: 35, page: 'p20n.webp', emoji: '❤️' },
+    { code: 'AF7 (P20)', name: 'Florero de Cristal con Gerberas', cat: 'arreglos', price: 25, page: 'p20n.webp', emoji: '🌺' },
+    { code: 'AF8 (P20)', name: 'Corazón con Ferreros y Cervezas', cat: 'arreglos', price: 49, page: 'p20n.webp', emoji: '🌸' },
 
     // ARREGLOS FLORALES (Page 21-22)
-    { code: 'AF9', name: 'Arreglo Floral Primavera', cat: 'arreglos', price: 25, page: 'p22n.webp', emoji: '💐' },
-    { code: 'AF10', name: 'Arreglo Floral Sol y Sombra', cat: 'arreglos', price: 35, page: 'p22n.webp', emoji: '🌷' },
-    { code: 'AF11', name: 'Arreglo Floral Jardín', cat: 'arreglos', price: 28, page: 'p22n.webp', emoji: '🌸' },
-    { code: 'AF12', name: 'Arreglo Floral Orquídea', cat: 'arreglos', price: 30, page: 'p22n.webp', emoji: '🌺' },
+    { code: 'AF9 (P22)', name: 'Arreglo Floral Primavera', cat: 'arreglos', price: 25, page: 'p22n.webp', emoji: '💐' },
+    { code: 'AF10 (P22)', name: 'Arreglo Floral Sol y Sombra', cat: 'arreglos', price: 35, page: 'p22n.webp', emoji: '🌷' },
+    { code: 'AF11 (P22)', name: 'Arreglo Floral Jardín', cat: 'arreglos', price: 28, page: 'p22n.webp', emoji: '🌸' },
+    { code: 'AF12 (P22)', name: 'Arreglo Floral Orquídea', cat: 'arreglos', price: 30, page: 'p22n.webp', emoji: '🌺' },
 
     // ARREGLOS EN BASE DE CRISTAL (Page 23)
-    { code: 'AC1', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 25, page: 'p23n.webp', emoji: '💎' },
-    { code: 'AC2', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 30, page: 'p23n.webp', emoji: '💎' },
-    { code: 'AC3', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 30, page: 'p23n.webp', emoji: '💎' },
-    { code: 'AC4', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 40, page: 'p23n.webp', emoji: '💎' },
-    { code: 'AC5', name: 'Arreglo con Base de Cristal Premium', cat: 'arreglos', price: 45, page: 'p23n.webp', emoji: '💎' },
+    { code: 'AC1 (P23)', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 25, page: 'p23n.webp', emoji: '💎' },
+    { code: 'AC2 (P23)', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 30, page: 'p23n.webp', emoji: '💎' },
+    { code: 'AC3 (P23)', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 30, page: 'p23n.webp', emoji: '💎' },
+    { code: 'AC4 (P23)', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 40, page: 'p23n.webp', emoji: '💎' },
+    { code: 'AC5 (P23)', name: 'Arreglo con Base de Cristal Premium', cat: 'arreglos', price: 45, page: 'p23n.webp', emoji: '💎' },
 
-    // FRUTA (Page 24)
-    { code: 'AFR1', name: 'Bouquet con Rosa Pastel (Fruta)', cat: 'fruta', price: 25, page: 'p24n.webp', emoji: '🍓' },
-    { code: 'AFR2', name: 'Bouquet Mix Rosas y Choc (Fruta)', cat: 'fruta', price: 20, page: 'p24n.webp', emoji: '🍊' },
-    { code: 'AFR3', name: 'Bouquet Rosas y Lirios (Fruta)', cat: 'fruta', price: 22, page: 'p24n.webp', emoji: '🍉' },
-    { code: 'AFR4', name: 'Bouquet Rosas y Lirios Choc (Fruta)', cat: 'fruta', price: 35, page: 'p24n.webp', emoji: '🍉' },
+    // ARREGLOS CON FRUTA (Page 24)
+    { code: 'BM1 (P24)', name: 'Arreglo con Fruta y Girasoles', cat: 'fruta', price: 25, page: 'p24n.webp', emoji: '🍓' },
+    { code: 'BM2 (P24)', name: 'Arreglo con Fruta y Rosas', cat: 'fruta', price: 20, page: 'p24n.webp', emoji: '🍊' },
+    { code: 'BML3 (P24)', name: 'Arreglo con Fruta y Lirios', cat: 'fruta', price: 22, page: 'p24n.webp', emoji: '🍉' },
+    { code: 'BML4 (P24)', name: 'Arreglo con Fruta, Rosas y Lirios', cat: 'fruta', price: 35, page: 'p24n.webp', emoji: '🍉' },
 
-    // MAQUILLAJE (Page 25)
-    { code: 'BM1', name: 'Bouquet Rosa Pastel y Babyblue + Maq.', cat: 'maquillaje', price: 30, page: 'p25n.webp', emoji: '💄' },
-    { code: 'BM2', name: 'Bouquet Mix de Rosa y Chocolates + Maq.', cat: 'maquillaje', price: 23, page: 'p25n.webp', emoji: '💄' },
-    { code: 'BML3', name: 'Bouquet con Rosas, Lirios y Chocolates + Maq.', cat: 'maquillaje', price: 30, page: 'p25n.webp', emoji: '💄' },
-    { code: 'BML4', name: 'Bouquet con Rosas y lirios + Maq.', cat: 'maquillaje', price: 25, page: 'p25n.webp', emoji: '💄' },
+    // BOUQUETS CON MAQUILLAJE (Page 25)
+    { code: 'BM1 (P25)', name: 'Bouquet Rosa Pastel y Babyblue + Maq.', cat: 'maquillaje', price: 30, page: 'p25n.webp', emoji: '💄' },
+    { code: 'BM2 (P25)', name: 'Bouquet Mix de Rosa y Chocolates + Maq.', cat: 'maquillaje', price: 23, page: 'p25n.webp', emoji: '💄' },
+    { code: 'BML3 (P25)', name: 'Bouquet con Rosas, Lirios y Chocolates + Maq.', cat: 'maquillaje', price: 30, page: 'p25n.webp', emoji: '💄' },
+    { code: 'BML4 (P25)', name: 'Bouquet con Rosas y lirios + Maq.', cat: 'maquillaje', price: 25, page: 'p25n.webp', emoji: '💄' },
 
-    // ROSAS ETERNAS
-    {
-        code: 'RE1', name: 'Rosa Eterna en Cúpula', cat: 'rosas_eternas', price: 18, page: 'p26n.webp', emoji: '🌟',
-        desc: 'Rosa eterna natural preservada en cúpula de cristal con base de madera decorada.'
-    },
-    {
-        code: 'RE2', name: 'Box Premium Rosa Eterna', cat: 'rosas_eternas', price: 25, page: 'p27n.webp', emoji: '🎁',
-        desc: 'Elegante box decorado con rosa eterna natural preservada y detalles especiales.'
-    },
+    // ROSAS ETERNAS (Page 26)
+    { code: 'BM1 (P26)', name: 'Bouquet con Tulipanes (Eterna)', cat: 'rosas_eternas', price: 4, page: 'p26n.webp', emoji: '🌷' },
+    { code: 'BM2 (P26)', name: 'Bouquet con 1 Rosa (Eterna)', cat: 'rosas_eternas', price: 2.50, page: 'p26n.webp', emoji: '🌹' },
+    { code: 'BML3 (P26)', name: 'Bouquet con Rosas, Lirios y Chocolates (Eterna)', cat: 'rosas_eternas', price: 10, page: 'p26n.webp', emoji: '🍫' },
+    { code: 'BML4 (P26)', name: 'Bouquet en Caja con Tulipanes (Eterna)', cat: 'rosas_eternas', price: 17, page: 'p26n.webp', emoji: '🌷' },
+
+    // ROSAS ETERNAS (Page 27)
+    { code: 'BM1 (P27)', name: 'Bouquet con Tulipanes (Eterna Agotado)', cat: 'rosas_eternas', price: 20, page: 'p27n.webp', emoji: '🌷' },
+    { code: 'BM2 (P27)', name: 'Bouquet con 1 Rosa (Eterna)', cat: 'rosas_eternas', price: 2.50, page: 'p27n.webp', emoji: '🌹' },
+    { code: 'BML3 (P27)', name: 'Bouquet con Rosas, Lirios y Chocolates (Eterna)', cat: 'rosas_eternas', price: 10, page: 'p27n.webp', emoji: '🍫' },
+    { code: 'BML4 (P27)', name: 'Bouquet en Caja con Tulipanes (Eterna)', cat: 'rosas_eternas', price: 17, page: 'p27n.webp', emoji: '🌷' },
 ];
 
 
