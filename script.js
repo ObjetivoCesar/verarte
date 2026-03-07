@@ -5,7 +5,7 @@
 const CONFIG = {
     GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxRoroADucatz_MaCWUTUBYM8Ao3P4yP4Lnq0zGbPpLoyK6l0BOF8l4m7waXjx3XfhqvQ/exec', // Paste Apps Script Web App URL here after setup
     WHATSAPP_NUMBER: '593999372331',
-    CATALOG_URL: 'public/catalogo.pdf',
+    CATALOG_URL: 'Catalogo dia de la mujer 2026_20260306_094416_0000.pdf',
     MAPS_URL: 'https://maps.app.goo.gl/ntenis6eNLW2rySBA',
 };
 
