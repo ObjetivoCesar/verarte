@@ -32,10 +32,10 @@ const PRODUCTS = [
         code: 'RE2', name: 'Box Premium Rosa Eterna', cat: 'rosas_eternas', price: 25, page: 'rosas eternas 2.jfif', emoji: '🎁',
         desc: 'Elegante box decorado con rosa eterna natural preservada y detalles especiales. Ideal para un regalo inolvidable.'
     },
-    { code: 'RE_BM1', name: 'Bouquet con Tulipanes', cat: 'rosas_eternas', price: 4, page: 'page_26', emoji: '🌷', desc: 'Precioso bouquet de tulipanes naturales. Código: BM1' },
-    { code: 'RE_BM2', name: 'Bouquet con 1 Rosa', cat: 'rosas_eternas', price: 2.50, page: 'page_26', emoji: '🌹', desc: 'Detalle clásico con una rosa natural. Código: BM2' },
-    { code: 'RE_BML3', name: 'Bouquet con Rosas, Lirios y Chocolates', cat: 'rosas_eternas', price: 10, page: 'page_26', emoji: '🍫', desc: 'Combinación dulce y floral. Código: BML3' },
-    { code: 'RE_BML4', name: 'Bouquet en Caja con Tulipanes', cat: 'rosas_eternas', price: 17, page: 'page_26', emoji: '🌷', desc: 'Elegante presentación en caja con tulipanes. Código: BML4' },
+    { code: 'RE_BM1', name: 'Bouquet con Tulipanes', cat: 'rosas_eternas', price: 4, page: 'rosas eternas.jfif', emoji: '🌷', desc: 'Precioso bouquet de tulipanes naturales. Código: BM1' },
+    { code: 'RE_BM2', name: 'Bouquet con 1 Rosa', cat: 'rosas_eternas', price: 2.50, page: 'rosas eternas.jfif', emoji: '🌹', desc: 'Detalle clásico con una rosa natural. Código: BM2' },
+    { code: 'RE_BML3', name: 'Bouquet con Rosas, Lirios y Chocolates', cat: 'rosas_eternas', price: 10, page: 'rosas eternas.jfif', emoji: '🍫', desc: 'Combinación dulce y floral. Código: BML3' },
+    { code: 'RE_BML4', name: 'Bouquet en Caja con Tulipanes', cat: 'rosas_eternas', price: 17, page: 'rosas eternas.jfif', emoji: '🌷', desc: 'Elegante presentación en caja con tulipanes. Código: BML4' },
 
     // DESAYUNOS
     {
@@ -303,9 +303,9 @@ function buildProductGrid() {
       <div class="card-img-placeholder cat-${p.cat}" style="display:none">${p.emoji}</div>
       <div class="card-overlay">
         <div class="card-price">${priceLabel} <span class="card-price-small">+ envío</span></div>
-        <div class="card-name">${pageProds.length > 1 ? 'Varios Detallas' : p.name}</div>
+        <div class="card-name">${pageProds.length > 1 ? 'Varios Detalles' : p.name}</div>
         <div class="card-meta">${cat ? cat.label : ''}${pageProds.length > 1 ? ' (' + pageProds.length + ')' : ''}</div>
-        <div class="card-action">Ver opciones <span>→</span></div>
+        <div class="card-action">${pageProds.length > 1 ? 'Ver modelos' : 'Ver detalle'} <span>→</span></div>
       </div>
     `;
         card.addEventListener('click', () => openProductModal(p));
