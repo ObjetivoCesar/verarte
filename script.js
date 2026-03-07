@@ -12,10 +12,10 @@ const CONFIG = {
 
 // ─── CATEGORY DEFINITIONS ─────────────────────────────────────────────────
 const CATEGORY_DISPLAY = [
-    { id: 'rosas_eternas', label: 'Rosas Eternas', emoji: '✨', page: 'rosas eternas.jfif', priceMin: 2.5, priceMax: 25 },
-    { id: 'desayunos', label: 'Desayunos', emoji: '🥞', page: 'page_08', priceMin: 20, priceMax: 26 },
-    { id: 'bouquets', label: 'Bouquets', emoji: '💐', page: 'page_14', priceMin: 2.5, priceMax: 37 },
     { id: 'arreglos', label: 'Arreglos Florales', emoji: '🌷', page: 'page_19', priceMin: 20, priceMax: 50 },
+    { id: 'bouquets', label: 'Bouquets', emoji: '💐', page: 'page_14', priceMin: 2.5, priceMax: 37 },
+    { id: 'desayunos', label: 'Desayunos', emoji: '🥞', page: 'page_08', priceMin: 20, priceMax: 26 },
+    { id: 'rosas_eternas', label: 'Rosas Eternas', emoji: '✨', page: 'rosas eternas.jfif', priceMin: 2.5, priceMax: 25 },
     { id: 'vino', label: 'Con Vino', emoji: '🍷', page: 'page_18', priceMin: 25, priceMax: 33 },
     { id: 'fruta', label: 'Con Fruta', emoji: '🍓', page: 'page_23', priceMin: 20, priceMax: 35 },
     { id: 'maquillaje', label: 'Con Maquillaje', emoji: '💄', page: 'page_24', priceMin: 23, priceMax: 30 },
@@ -131,86 +131,6 @@ const calculateShipping = (d) => {
     if (d < 3.0) return 1.75;
     return 2.00 + Math.floor(d - 3) * 0.25;
 };
-
-// ─── DISTANCE TOOLS ───────────────────────────────────────────────────────
-function calculateGeoDistance(lat, lng) {
-    const { lat: slat, lng: slng } = CONFIG.STORE_LOCATION;
-    const R = 6371; // Earth radius
-    const dLat = (lat - slat) * Math.PI / 180;
-    const dLng = (lng - slng) * Math.PI / 180;
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(slat * Math.PI / 180) * Math.cos(lat * Math.PI / 180) *
-        Math.sin(dLng / 2) * Math.sin(dLng / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const crowDistance = R * c;
-
-    // Multiplier for Loja's street grid estimation (approx 1.25x road factor)
-    const streetFactor = 1.25;
-    return (crowDistance * streetFactor).toFixed(1);
-}
-
-let deliveryMap = null;
-let deliveryMarker = null;
-
-function initLocationMap() {
-    const mapBtn = $('#btn-map');
-    const gpsBtn = $('#btn-gps');
-    const container = $('#map-container');
-    const distInput = $('#f-distancia');
-    const shipResult = $('#shipping-result');
-
-    const updateDistance = (lat, lng) => {
-        const d = calculateGeoDistance(lat, lng);
-        distInput.value = d;
-        distInput.dispatchEvent(new Event('input')); // Trigger visual update
-
-        if (deliveryMarker) deliveryMarker.setLatLng([lat, lng]);
-        else deliveryMarker = L.marker([lat, lng], { draggable: true }).addTo(deliveryMap);
-
-        deliveryMap.setView([lat, lng], 15);
-    };
-
-    mapBtn.addEventListener('click', () => {
-        const isOpen = container.style.height !== '0px' && container.style.height !== '';
-        container.style.height = isOpen ? '0px' : '340px';
-
-        if (!isOpen && !deliveryMap) {
-            // Give time for CSS transition before layout
-            setTimeout(() => {
-                const { lat, lng } = CONFIG.STORE_LOCATION;
-                deliveryMap = L.map('delivery-map').setView([lat, lng], 14);
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(deliveryMap);
-
-                // Store marker (unmovable)
-                L.marker([lat, lng], {
-                    icon: L.icon({
-                        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
-                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
-                    })
-                }).addTo(deliveryMap).bindPopup('<b>Tienda VerArteLoja</b>').openPopup();
-
-                deliveryMap.on('click', (e) => updateDistance(e.latlng.lat, e.latlng.lng));
-            }, 100);
-        }
-    });
-
-    gpsBtn.addEventListener('click', () => {
-        if (!navigator.geolocation) return alert('GPS no soportado en este navegador');
-        gpsBtn.textContent = 'Buscando…';
-        navigator.geolocation.getCurrentPosition(
-            (pos) => {
-                gpsBtn.textContent = '📍 GPS actual';
-                if (container.style.height === '0px' || container.style.height === '') mapBtn.click();
-                updateDistance(pos.coords.latitude, pos.coords.longitude);
-            },
-            () => {
-                gpsBtn.textContent = '📍 GPS actual';
-                alert('No se pudo acceder a tu ubicación. Por favor usa el mapa manualmente.');
-            }
-        );
-    });
-}
 
 // ─── NAVBAR ───────────────────────────────────────────────────────────────
 function initNavbar() {
@@ -534,8 +454,6 @@ function initForm() {
             setTimeout(() => shipResult.classList.remove('pulse'), 500);
         });
     }
-
-    initLocationMap();
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
