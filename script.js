@@ -11,18 +11,18 @@ const CONFIG = {
 
 // ─── CATEGORY DEFINITIONS ─────────────────────────────────────────────────
 const CATEGORY_DISPLAY = [
-    { id: 'rosas_eternas', label: 'Rosas Eternas', emoji: '✨', page: 'rosas eternas.jfif', priceMin: 18, priceMax: 25 },
-    { id: 'desayunos', label: 'Desayunos', emoji: '🥞', page: 'desayunos.jfif', priceMin: 20, priceMax: 26 },
-    { id: 'bouquets', label: 'Bouquets', emoji: '💐', page: 'bouquets.jfif', priceMin: 2.5, priceMax: 37 },
-    { id: 'arreglos', label: 'Arreglos Florales', emoji: '🌷', page: 'arreglos florales.jfif', priceMin: 20, priceMax: 50 },
-    { id: 'vino', label: 'Con Vino', emoji: '🍷', page: 'arreglos con vino.jfif', priceMin: 25, priceMax: 33 },
-    { id: 'fruta', label: 'Con Fruta', emoji: '🍓', page: 'arreglos con fruta.jfif', priceMin: 20, priceMax: 35 },
-    { id: 'maquillaje', label: 'Con Maquillaje', emoji: '💄', page: 'Arreglo bouquets con maquillaje.jfif', priceMin: 23, priceMax: 30 },
+    { id: 'rosas_eternas', label: 'Rosas Eternas', emoji: '✨', page: 'rosas eternas.jfif', priceMin: 2.5, priceMax: 25 },
+    { id: 'desayunos', label: 'Desayunos', emoji: '🥞', page: 'page_08', priceMin: 20, priceMax: 26 },
+    { id: 'bouquets', label: 'Bouquets', emoji: '💐', page: 'page_14', priceMin: 2.5, priceMax: 37 },
+    { id: 'arreglos', label: 'Arreglos Florales', emoji: '🌷', page: 'page_19', priceMin: 20, priceMax: 50 },
+    { id: 'vino', label: 'Con Vino', emoji: '🍷', page: 'page_18', priceMin: 25, priceMax: 33 },
+    { id: 'fruta', label: 'Con Fruta', emoji: '🍓', page: 'page_23', priceMin: 20, priceMax: 35 },
+    { id: 'maquillaje', label: 'Con Maquillaje', emoji: '💄', page: 'page_24', priceMin: 23, priceMax: 30 },
 ];
 
 // ─── PRODUCT DATA ─────────────────────────────────────────────────────────
 const PRODUCTS = [
-    // ROSAS ETERNAS
+    // ROSAS ETERNAS (Page 26 & others)
     {
         code: 'RE1', name: 'Rosa Eterna en Cúpula', cat: 'rosas_eternas', price: 18, page: 'rosas eternas.jfif', emoji: '🌟',
         desc: 'Rosa eterna natural preservada en cúpula de cristal con base de madera decorada. Un detalle que simboliza el amor eterno.'
@@ -31,77 +31,89 @@ const PRODUCTS = [
         code: 'RE2', name: 'Box Premium Rosa Eterna', cat: 'rosas_eternas', price: 25, page: 'rosas eternas 2.jfif', emoji: '🎁',
         desc: 'Elegante box decorado con rosa eterna natural preservada y detalles especiales. Ideal para un regalo inolvidable.'
     },
+    { code: 'RE_BM1', name: 'Bouquet con Tulipanes', cat: 'rosas_eternas', price: 4, page: 'page_26', emoji: '🌷' },
+    { code: 'RE_BM2', name: 'Bouquet con 1 Rosa', cat: 'rosas_eternas', price: 2.50, page: 'page_26', emoji: '🌹' },
+    { code: 'RE_BML3', name: 'Bouquet con Rosas, Lirios y Chocolates', cat: 'rosas_eternas', price: 10, page: 'page_26', emoji: '🍫' },
+    { code: 'RE_BML4', name: 'Bouquet en Caja con Tulipanes', cat: 'rosas_eternas', price: 17, page: 'page_26', emoji: '🌷' },
+
     // DESAYUNOS
     {
         code: 'DGP1', name: 'Desayuno Girl Power', cat: 'desayunos', price: 26, page: 'page_08', emoji: '🥞',
         desc: 'Desayunador de madera decorado · Bouquet de Flores · Collage de 3 fotos · Huma/Tamal · Bandeja con mini pancitos · Mantequilla y mermelada · Jugo · Café · Ensalada de frutas con yogurt · Chocolates · Decoración Día de la Mujer'
     },
     {
-        code: 'DBW2', name: 'Desayuno Beautiful Woman', cat: 'desayunos', price: 20, page: 'desayunos.jfif', emoji: '🌸',
+        code: 'DBW2', name: 'Desayuno Beautiful Woman', cat: 'desayunos', price: 20, page: 'page_09', emoji: '🌸',
         desc: 'Caja decorada · Bouquet de Flores · Huma/Tamal · Mini pancito · Jugo · Mantequilla y mermelada · Café · Ensalada de frutas con yogurt · Decoración Día de la Mujer'
     },
-    // MINI, SMALL & BOUQUETS (MERGED)
-    { code: 'BUR1', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 2.50, page: 'bouquets-unitarios.jfif', emoji: '🌹' },
-    { code: 'BUGI2', name: 'Mini Bouquet con 1 Girasol', cat: 'bouquets', price: 2.50, page: 'bouquets-unitarios 2.jfif', emoji: '🌻' },
-    { code: 'BUR3', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 3.50, page: 'bouquets-unitarios 3.jfif', emoji: '🌹' },
-    { code: 'BUGE4', name: 'Mini Bouquet con 1 Gerbera', cat: 'bouquets', price: 3.50, page: 'bouquets-unitarios 4.jfif', emoji: '🌸' },
-    { code: 'BUR5', name: 'Mini Bouquet con Rosa y variedad', cat: 'bouquets', price: 6, page: 'a.jfif', emoji: '💐' },
-    { code: 'BUR6', name: 'Mini Bouquet con Rosa', cat: 'bouquets', price: 6, page: 'b.jfif', emoji: '🌹' },
+    // BOUQUETS UNITARIOS (Page 11 & 12)
+    { code: 'BUR1', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 2.50, page: 'page_11', emoji: '🌹' },
+    { code: 'BUGI2', name: 'Mini Bouquet con 1 Girasol', cat: 'bouquets', price: 2.50, page: 'page_11', emoji: '🌻' },
+    { code: 'BUR3', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 3.50, page: 'page_11', emoji: '🌹' },
+    { code: 'BUGE4', name: 'Mini Bouquet con 1 Gerbera', cat: 'bouquets', price: 3.50, page: 'page_11', emoji: '🌸' },
+    { code: 'BUR5', name: 'Mini Bouquet con Rosa y variedad', cat: 'bouquets', price: 4, page: 'page_12', emoji: '💐' },
+    { code: 'BUR6', name: 'Mini Bouquet con Rosa', cat: 'bouquets', price: 4, page: 'page_12', emoji: '🌹' },
     { code: 'BUR7', name: 'Mini Bouquet con Rosas', cat: 'bouquets', price: 6, page: 'page_12', emoji: '🌹' },
-    { code: 'BUR8', name: 'Mini Bouquet con Rosas y variedad', cat: 'bouquets', price: 9, page: 'page_12', emoji: '💐' },
-    { code: 'BSR1', name: 'Bouquet Small con Rosas y variedad', cat: 'bouquets', price: 8, page: 'bouquets-small.jfif', emoji: '🌺' },
-    { code: 'BSR2', name: 'Bouquet Small con Rosas', cat: 'bouquets', price: 8, page: 'page_13', emoji: '🌷' },
-    { code: 'BSGI3', name: 'Bouquet Small Girasol, Rosas y Ferreros', cat: 'bouquets', price: 12, page: 'page_13', emoji: '🌻' },
-    { code: 'BSGE4', name: 'Bouquet Small Girasol, Rosas y Ferreros', cat: 'bouquets', price: 15, page: 'page_13', emoji: '🌻' },
-    // BOUQUETS
-    { code: 'BM1', name: 'Bouquet Rosa Pastel y Babyblue', cat: 'bouquets', price: 20, page: 'bouquets-a.jfif', emoji: '💐' },
-    { code: 'BM2', name: 'Bouquet Mix de Rosa y Chocolates', cat: 'bouquets', price: 20, page: 'bouquets - b.jfif', emoji: '🍫' },
-    { code: 'BML3', name: 'Bouquet con Rosas y Lirios', cat: 'bouquets', price: 22, page: 'bouquets - c.jfif', emoji: '🌸' },
-    { code: 'BML4', name: 'Bouquet Rosas, Lirios y Chocolates', cat: 'bouquets', price: 22, page: 'page_14', emoji: '🍫' },
+    { code: 'BUR8', name: 'Mini Bouquet con Rosas y variedad', cat: 'bouquets', price: 6, page: 'page_12', emoji: '💐' },
+    // BOUQUETS SMALL (Page 13)
+    { code: 'BSR1', name: 'Mini Bouquet con Rosas y variedad', cat: 'bouquets', price: 9, page: 'page_13', emoji: '🌺' },
+    { code: 'BSR2', name: 'Mini Bouquet con Rosas', cat: 'bouquets', price: 8, page: 'page_13', emoji: '🌷' },
+    { code: 'BSGI3', name: 'Mini Bouquet con Girasol, Rosas y Ferreros', cat: 'bouquets', price: 12, page: 'page_13', emoji: '🌻' },
+    { code: 'BSGE4', name: 'Mini Bouquet con Girasol, Rosas y Ferreros', cat: 'bouquets', price: 12, page: 'page_13', emoji: '🌻' },
+    // BOUQUETS (Page 14-17)
+    { code: 'BM1', name: 'Bouquet Rosa Pastel y Babyblue', cat: 'bouquets', price: 15, page: 'page_14', emoji: '💐' },
+    { code: 'BM2', name: 'Bouquet Mix de Rosa y Chocolates', cat: 'bouquets', price: 20, page: 'page_14', emoji: '🍫' },
+    { code: 'BML3', name: 'Bouquet con Rosas, Lirios y Chocolates', cat: 'bouquets', price: 20, page: 'page_14', emoji: '🌸' },
+    { code: 'BML4', name: 'Bouquet con Rosas y lirios', cat: 'bouquets', price: 22, page: 'page_14', emoji: '🍫' },
     { code: 'BM5', name: 'Arreglo con Rosas y Gerbera', cat: 'bouquets', price: 25, page: 'page_15', emoji: '🌷' },
     { code: 'BM6', name: 'Bouquet con Rosas', cat: 'bouquets', price: 12, page: 'page_15', emoji: '🌹' },
-    { code: 'BM7', name: 'Bouquet con Rosas', cat: 'bouquets', price: 25, page: 'page_15', emoji: '🌹' },
-    { code: 'BM8', name: 'Bouquet con Rosas y Girasol', cat: 'bouquets', price: 15, page: 'page_15', emoji: '🌻' },
-    { code: 'BML8', name: 'Bouquet con Rosa y Lirios', cat: 'bouquets', price: 12, page: 'page_16', emoji: '🌸' },
-    { code: 'BM9', name: 'Bouquet con Rosa y BabyBlue', cat: 'bouquets', price: 15, page: 'page_16', emoji: '💙' },
-    { code: 'BM10', name: 'Bouquet con Rosa y BabyBlue', cat: 'bouquets', price: 12, page: 'page_16', emoji: '💙' },
+    { code: 'BM7', name: 'Bouquet con Rosas', cat: 'bouquets', price: 15, page: 'page_15', emoji: '🌹' },
+    { code: 'BM8', name: 'Bouquet con Rosas y Girasol', cat: 'bouquets', price: 12, page: 'page_15', emoji: '🌻' },
+    { code: 'BML8', name: 'Bouquet con Rosa y Lirios', cat: 'bouquets', price: 15, page: 'page_16', emoji: '🌸' },
+    { code: 'BM9', name: 'Bouquet con Rosa y BabyBlue', cat: 'bouquets', price: 12, page: 'page_16', emoji: '💙' },
+    { code: 'BM10', name: 'Bouquet con Rosa y BabyBlue', cat: 'bouquets', price: 15, page: 'page_16', emoji: '💙' },
     { code: 'BML11', name: 'Bouquet con Rosas y Lirios', cat: 'bouquets', price: 20, page: 'page_16', emoji: '🌸' },
-    { code: 'BM12', name: 'Bouquet con Rosa y Ferrero', cat: 'bouquets', price: 20, page: 'page_17', emoji: '🍫' },
-    { code: 'BM13', name: 'Bouquet con Rosa y Lirios', cat: 'bouquets', price: 37, page: 'page_17', emoji: '🌸' },
+    { code: 'BM12', name: 'Bouquet con Rosa y Ferrero', cat: 'bouquets', price: 37, page: 'page_17', emoji: '🍫' },
+    { code: 'BM13', name: 'Bouquet con Rosa y Lirios', cat: 'bouquets', price: 20, page: 'page_17', emoji: '🌸' },
     { code: 'BM14', name: 'Bouquet con Chocolates', cat: 'bouquets', price: 25, page: 'page_17', emoji: '🍫' },
     { code: 'BM15', name: 'Bouquet Especial', cat: 'bouquets', price: 25, page: 'page_17', emoji: '💐' },
-    // ARREGLOS CON VINO
-    { code: 'AV1', name: 'Arreglo con Vino y Girasoles', cat: 'vino', price: 30, page: 'arreglos con vino.jfif', emoji: '🍷' },
+
+    // ARREGLOS CON VINO (Page 18)
+    { code: 'AV1', name: 'Arreglo con Vino y Girasoles', cat: 'vino', price: 30, page: 'page_18', emoji: '🍷' },
     { code: 'AV2', name: 'Arreglo con Vino y Chocolates', cat: 'vino', price: 30, page: 'page_18', emoji: '🍷' },
     { code: 'AV3', name: 'Arreglo con Vino, Rosas y Chocolates', cat: 'vino', price: 33, page: 'page_18', emoji: '🍷' },
     { code: 'AV4', name: 'Arreglo con Vino', cat: 'vino', price: 25, page: 'page_18', emoji: '🍾' },
-    // ARREGLOS FLORALES
-    { code: 'AF1', name: 'Florero de Cristal', cat: 'arreglos', price: 22, page: 'arreglos florales.jfif', emoji: '🌷' },
-    { code: 'AF2', name: 'Arreglo Floral', cat: 'arreglos', price: 25, page: 'arreglos florales 2.jfif', emoji: '🌸' },
-    { code: 'AF3', name: 'Arreglo Floral', cat: 'arreglos', price: 25, page: 'arreglos florales 3.jfif', emoji: '🌸' },
-    { code: 'AF4', name: 'Florero de Cristal', cat: 'arreglos', price: 20, page: 'arreglos florales 4.jfif', emoji: '🌷' },
-    { code: 'AF5', name: 'Arreglo Rosas y Fresas con Chocolate', cat: 'arreglos', price: 40, page: 'page_20', emoji: '🍓' },
-    { code: 'AF6', name: 'Corazón con Ferreros y Cervezas', cat: 'arreglos', price: 30, page: 'page_20', emoji: '❤️' },
-    { code: 'AF7', name: 'Arreglo Floral Especial', cat: 'arreglos', price: 35, page: 'page_20', emoji: '🌺' },
-    { code: 'AF8', name: 'Florero de Cristal con Gerberas', cat: 'arreglos', price: 49, page: 'page_20', emoji: '🌸' },
-    { code: 'AF9', name: 'Arreglo Floral Premium', cat: 'arreglos', price: 35, page: 'page_21', emoji: '💐' },
-    { code: 'AF10', name: 'Arreglo Floral', cat: 'arreglos', price: 28, page: 'page_21', emoji: '🌷' },
-    { code: 'AF11', name: 'Arreglo Floral', cat: 'arreglos', price: 35, page: 'page_21', emoji: '🌸' },
-    { code: 'AF12', name: 'Arreglo Floral', cat: 'arreglos', price: 30, page: 'page_21', emoji: '🌺' },
-    // BASE CRISTAL (MERGED)
-    { code: 'AC1', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 25, page: 'arreglos con base de cristal.jfif', emoji: '💎' },
+
+    // ARREGLOS FLORALES (Page 19-21)
+    { code: 'AF1', name: 'Florero de Cristal', cat: 'arreglos', price: 22, page: 'page_19', emoji: '🌷' },
+    { code: 'AF2', name: 'Arreglo Floral', cat: 'arreglos', price: 25, page: 'page_19', emoji: '🌸' },
+    { code: 'AF3', name: 'Arreglo Floral', cat: 'arreglos', price: 25, page: 'page_19', emoji: '🌸' },
+    { code: 'AF4', name: 'Florero de Cristal', cat: 'arreglos', price: 20, page: 'page_19', emoji: '🌷' },
+    { code: 'AF5', name: 'Arreglo con Rosas y Fresas con Chocolate', cat: 'arreglos', price: 27, page: 'page_20', emoji: '🍓' },
+    { code: 'AF6', name: 'Arreglo Floral Premium', cat: 'arreglos', price: 40, page: 'page_20', emoji: '❤️' },
+    { code: 'AF7', name: 'Florero de Cristal con Gerberas', cat: 'arreglos', price: 30, page: 'page_20', emoji: '🌺' },
+    { code: 'AF8', name: 'Corazón con Ferreros y Cervezas modelo', cat: 'arreglos', price: 49, page: 'page_20', emoji: '🌸' },
+    { code: 'AF9', name: 'Arreglo Floral Primaveral', cat: 'arreglos', price: 28, page: 'page_21', emoji: '💐' },
+    { code: 'AF10', name: 'Arreglo Floral Sol y Sombra', cat: 'arreglos', price: 35, page: 'page_21', emoji: '🌷' },
+    { code: 'AF11', name: 'Arreglo Floral Jardín', cat: 'arreglos', price: 28, page: 'page_21', emoji: '🌸' },
+    { code: 'AF12', name: 'Arreglo Floral Orquídea', cat: 'arreglos', price: 30, page: 'page_21', emoji: '🌺' },
+
+    // ARREGLOS EN BASE DE CRISTAL (Page 22)
+    { code: 'AC1', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 25, page: 'page_22', emoji: '💎' },
     { code: 'AC2', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 35, page: 'page_22', emoji: '💎' },
     { code: 'AC3', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 35, page: 'page_22', emoji: '💎' },
     { code: 'AC4', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 40, page: 'page_22', emoji: '💎' },
-    // FRUTA
-    { code: 'AFR1', name: 'Arreglo con Fruta', cat: 'fruta', price: 20, page: 'arreglos con fruta.jfif', emoji: '🍓' },
-    { code: 'AFR2', name: 'Arreglo con Fruta Especial', cat: 'fruta', price: 22, page: 'page_23', emoji: '🍊' },
-    { code: 'AFR3', name: 'Arreglo con Fruta Premium', cat: 'fruta', price: 35, page: 'page_23', emoji: '🍉' },
-    // MAQUILLAJE
-    { code: 'MAQ1', name: 'Bouquet Rosa Pastel + Maquillaje', cat: 'maquillaje', price: 23, page: 'Arreglo bouquets con maquillaje.jfif', emoji: '💄' },
-    { code: 'MAQ2', name: 'Bouquet Mix Rosa y Chocolates + Maquillaje', cat: 'maquillaje', price: 30, page: 'page_24', emoji: '💄' },
-    { code: 'MAQ3', name: 'Bouquet Rosas y Lirios + Maquillaje', cat: 'maquillaje', price: 25, page: 'page_24', emoji: '💄' },
-    { code: 'MAQ4', name: 'Bouquet Rosas, Lirios y Choc. + Maquillaje', cat: 'maquillaje', price: 30, page: 'page_24', emoji: '💄' },
+
+    // FRUTA (Page 23)
+    { code: 'AFR1', name: 'Arreglo con Fruta', cat: 'fruta', price: 25, page: 'page_23', emoji: '🍓' },
+    { code: 'AFR2', name: 'Arreglo con Fruta Especial', cat: 'fruta', price: 20, page: 'page_23', emoji: '🍊' },
+    { code: 'AFR3', name: 'Arreglo con Fruta Premium', cat: 'fruta', price: 22, page: 'page_23', emoji: '🍉' },
+    { code: 'AFR4', name: 'Arreglo Frutal de Lujo', cat: 'fruta', price: 35, page: 'page_23', emoji: '🍉' },
+
+    // MAQUILLAJE (Page 24)
+    { code: 'MAQ1', name: 'Bouquet Mix de Rosa y Chocolates + Maq.', cat: 'maquillaje', price: 30, page: 'page_24', emoji: '💄' },
+    { code: 'MAQ2', name: 'Bouquet Rosa Pastel + Maquillaje', cat: 'maquillaje', price: 23, page: 'page_24', emoji: '💄' },
+    { code: 'MAQ3', name: 'Bouquet Rosas y Lirios + Maquillaje', cat: 'maquillaje', price: 30, page: 'page_24', emoji: '💄' },
+    { code: 'MAQ4', name: 'Bouquet Rosas, Lirios y Choc. + Maquillaje', cat: 'maquillaje', price: 25, page: 'page_24', emoji: '💄' },
 ];
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────
@@ -181,24 +193,38 @@ function filterProducts(catId) {
 // ─── PRODUCT GRID ─────────────────────────────────────────────────────────
 function buildProductGrid() {
     const grid = $('#products-grid');
-    PRODUCTS.forEach(p => {
+    grid.innerHTML = '';
+
+    // Group products by page image for the grid view
+    const uniquePages = [...new Set(PRODUCTS.map(p => p.page))];
+
+    uniquePages.forEach(page => {
+        const pageProds = PRODUCTS.filter(p => p.page === page);
+        const p = pageProds[0]; // Use first product as representative
         const card = document.createElement('div');
         const cat = catInfo(p.cat);
         const isHidden = p.cat !== CATEGORY_DISPLAY[0].id;
+
         card.className = `product-card cat-${p.cat}${isHidden ? ' hidden' : ''}`;
-        card.dataset.name = p.name.toLowerCase();
-        card.dataset.code = p.code.toLowerCase();
+        // Store searchable data for all products on this page
+        card.dataset.name = pageProds.map(item => item.name.toLowerCase()).join(' ');
+        card.dataset.code = pageProds.map(item => item.code.toLowerCase()).join(' ');
         card.dataset.cat = p.cat;
+
         const imgSrc = catPageSrc(p.page);
+        const priceLabel = pageProds.length > 1
+            ? `Desde $${Math.min(...pageProds.map(x => x.price)).toFixed(2)}`
+            : `$${p.price.toFixed(2)}`;
+
         card.innerHTML = `
       <img class="card-img" src="${imgSrc}" alt="${p.name}" loading="lazy"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="card-img-placeholder cat-${p.cat}" style="display:none">${p.emoji}</div>
       <div class="card-overlay">
-        <div class="card-price">$${p.price.toFixed(2)} <span class="card-price-small">+ envío</span></div>
-        <div class="card-name">${p.name}</div>
-        <div class="card-meta">${cat ? cat.label : ''}</div>
-        <div class="card-action">Ver detalle <span>→</span></div>
+        <div class="card-price">${priceLabel} <span class="card-price-small">+ envío</span></div>
+        <div class="card-name">${pageProds.length > 1 ? 'Varios Detallas' : p.name}</div>
+        <div class="card-meta">${cat ? cat.label : ''}${pageProds.length > 1 ? ' (' + pageProds.length + ')' : ''}</div>
+        <div class="card-action">Ver opciones <span>→</span></div>
       </div>
     `;
         card.addEventListener('click', () => openProductModal(p));
@@ -283,43 +309,66 @@ function openCategoryModal(cat) {
 // ─── SPLIT MODAL (Product) ────────────────────────────────────────────────
 function openProductModal(p) {
     const cat = catInfo(p.cat);
-    const waMsg = encodeURIComponent(`Hola VerArteLoja! 🌸\nMe interesa: *Cod. ${p.code}* — ${p.name}\nPrecio: $${p.price.toFixed(2)} + envío`);
+    const pageVariants = PRODUCTS.filter(v => v.page === p.page);
+
+    const updateModalContent = (selected) => {
+        const waMsg = encodeURIComponent(`Hola VerArteLoja! 🌸\nMe interesa: *Cod. ${selected.code}* — ${selected.name}\nPrecio: $${selected.price.toFixed(2)} + envío`);
+
+        $('#modal-right').innerHTML = `
+            <button id="modal-close" class="modal-close-btn" aria-label="Cerrar">✕</button>
+            <div class="modal-cat-tag">${cat ? cat.emoji + ' ' + cat.label.toUpperCase() : ''}</div>
+            <h2 class="modal-title">${selected.name}</h2>
+            <p class="modal-tagline">"Un detalle que se siente especial"</p>
+            <p class="modal-desc">${selected.desc || 'Todos los arreglos llevan tarjeta y decoración especial para el destinatario.'}</p>
+            
+            <div class="modal-specs">
+                <div class="modal-specs-title">Seleccione el detalle:</div>
+                ${pageVariants.length > 1 ? `
+                <select id="modal-variant-select" class="form-control" style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.1); border-color: var(--gold);">
+                    ${pageVariants.map(v => `<option value="${v.code}" ${v.code === selected.code ? 'selected' : ''}>${v.code} — ${v.name} ($${v.price.toFixed(2)})</option>`).join('')}
+                </select>
+                ` : `
+                <div class="modal-spec-row">
+                    <span class="modal-spec-label">💰 Precio</span>
+                    <span class="modal-spec-value">$${selected.price.toFixed(2)}</span>
+                </div>
+                `}
+                <div class="modal-spec-row">
+                    <span class="modal-spec-label">🚚 Envío</span>
+                    <span class="modal-spec-value">Consultar</span>
+                </div>
+            </div>
+
+            <div class="modal-cta">
+                <button class="btn btn-primary" onclick="closeModal();selectProductInForm('${selected.code}')">✉️ Hacer pedido</button>
+                <a class="btn btn-ghost-white" href="https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${waMsg}" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+            <div class="modal-location">📍 Bernardo Valdivieso y Miguel Riofrío Esq. · Loja</div>
+        `;
+
+        const select = $('#modal-variant-select');
+        if (select) {
+            select.addEventListener('change', (e) => {
+                const newVal = pageVariants.find(v => v.code === e.target.value);
+                updateModalContent(newVal);
+            });
+        }
+
+        // Re-attach close button listener
+        const closeBtn = $('#modal-close');
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    };
 
     $('#modal-left').innerHTML = `
-    <img src="${catPageSrc(p.page)}" alt="${p.name}"
-         style="width:100%;height:100%;object-fit:cover;"
-         onerror="this.outerHTML='<div class=\\'modal-left-placeholder cat-${p.cat}\\'>${p.emoji}</div>'">
-  `;
-    $('#modal-right').innerHTML = `
-    <button id="modal-close" class="modal-close-btn" aria-label="Cerrar">✕</button>
-    <div class="modal-cat-tag">${cat ? cat.emoji + ' ' + cat.label.toUpperCase() : ''}</div>
-    <h2 class="modal-title">${p.name}</h2>
-    <p class="modal-tagline">"Un detalle que se siente especial"</p>
-    <p class="modal-desc">${p.desc || 'Todos los arreglos llevan tarjeta y decoración especial para el destinatario.'}</p>
-    <div class="modal-specs">
-      <div class="modal-specs-title">Especificaciones</div>
-      <div class="modal-spec-row" style="display:none">
-        <span class="modal-spec-label">🏷️ Código</span>
-        <span class="modal-spec-value">Cod. ${p.code}</span>
-      </div>
-      <div class="modal-spec-row">
-        <span class="modal-spec-label">💰 Precio</span>
-        <span class="modal-spec-value">$${p.price.toFixed(2)}</span>
-      </div>
-      <div class="modal-spec-row">
-        <span class="modal-spec-label">🚚 Envío</span>
-        <span class="modal-spec-value">Consultar</span>
-      </div>
-    </div>
-    <div class="modal-cta">
-      <button class="btn btn-primary" onclick="closeModal();selectProductInForm('${p.code}')">✉️ Hacer pedido</button>
-      <a class="btn btn-ghost-white" href="https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${waMsg}" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Consultar por WhatsApp
-      </a>
-    </div>
-    <div class="modal-location">📍 Bernardo Valdivieso y Miguel Riofrío Esq. · Loja</div>
-  `;
+        <img src="${catPageSrc(p.page)}" alt="${p.name}"
+             style="width:100%;height:100%;object-fit:cover;"
+             onerror="this.outerHTML='<div class=\\'modal-left-placeholder cat-${p.cat}\\'>${p.emoji}</div>'">
+    `;
+
+    updateModalContent(p);
     openModal();
 }
 
