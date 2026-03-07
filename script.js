@@ -325,8 +325,8 @@ function openProductModal(p) {
             <div class="modal-specs">
                 <div class="modal-specs-title">Seleccione el detalle:</div>
                 ${pageVariants.length > 1 ? `
-                <select id="modal-variant-select" class="form-control" style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.1); border-color: var(--gold);">
-                    ${pageVariants.map(v => `<option value="${v.code}" ${v.code === selected.code ? 'selected' : ''}>${v.code} — ${v.name} ($${v.price.toFixed(2)})</option>`).join('')}
+                <select id="modal-variant-select" class="form-control" style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.1); border-color: var(--gold); font-size: 0.85rem; padding: 0.75rem 0.5rem;">
+                    ${pageVariants.map(v => `<option value="${v.code}" ${v.code === selected.code ? 'selected' : ''}>${v.code}: $${v.price.toFixed(2)} — ${v.name}</option>`).join('')}
                 </select>
                 ` : `
                 <div class="modal-spec-row">

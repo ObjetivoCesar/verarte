@@ -1467,8 +1467,17 @@ footer {
   }
 
   .modal-left {
-    min-height: 240px;
-    max-height: 300px;
+    min-height: 280px;
+    max-height: 350px;
+    background: #fff;
+  }
+
+  .modal-left img {
+    object-fit: contain;
+  }
+
+  .modal-right {
+    padding: 1.5rem 1.2rem;
   }
 
   .category-grid,
@@ -1549,6 +1558,23 @@ footer {
 
   .hero-text {
     padding: 3rem 1.5rem 1.5rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: .7rem;
+  }
+
+  .card-overlay {
+    padding: .8rem 1rem;
+  }
+
+  .card-price {
+    font-size: 1.1rem;
+  }
+
+  .card-name {
+    font-size: .95rem;
   }
 
   .hero-actions {
@@ -1715,10 +1741,22 @@ footer {
     order: -1;
   }
 }
+
 @keyframes resultPulse {
-  0% { transform: scale(1); color: var(--gold); }
-  50% { transform: scale(1.1); color: var(--rose-light); }
-  100% { transform: scale(1); color: var(--gold); }
+  0% {
+    transform: scale(1);
+    color: var(--gold);
+  }
+
+  50% {
+    transform: scale(1.1);
+    color: var(--rose-light);
+  }
+
+  100% {
+    transform: scale(1);
+    color: var(--gold);
+  }
 }
 
 .pulse {
