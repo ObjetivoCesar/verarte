@@ -365,10 +365,7 @@ function buildWhatsAppFromForm(data) {
         '*👤 Datos de quien recibe:*',
         `8. Nombre: ${data.destinatario}`, `9. Celular: ${data.celular}`, '',
         '*🕐 Entrega:*', `10. Hora: ${data.hora}`, `11. Fecha: ${data.fecha}`, '',
-        '*💌 Tarjeta Especial:*',
-        `De: ${data.de}`,
-        `Para: ${data.para}`,
-        `Mensaje: ${data.mensaje || '(sin mensaje extra)'}`,
+        `💌 Mensaje: ${data.mensaje || '(sin mensaje)'}`,
     ];
     return `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
 }
@@ -396,8 +393,6 @@ function initForm() {
             celular: $('#f-celular').value.trim(),
             hora: $('#f-hora').value,
             fecha: $('#f-fecha').value,
-            de: $('#f-de').value.trim(),
-            para: $('#f-para').value.trim(),
             mensaje: $('#f-mensaje').value.trim(),
         };
 

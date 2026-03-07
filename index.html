@@ -28,8 +28,8 @@
     content="https://verarteloja.vercel.app/public/images/logo/40e1ac6f-bbb0-46fb-b691-d798d3f84915.jfif">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/webp" href="public/Contacto/tarjeta de y Para.webp">
-  <link rel="apple-touch-icon" href="public/Contacto/tarjeta de y Para.webp">
+  <link rel="icon" type="image/jpeg" href="public/images/logo/40e1ac6f-bbb0-46fb-b691-d798d3f84915.jfif">
+  <link rel="apple-touch-icon" href="public/images/logo/40e1ac6f-bbb0-46fb-b691-d798d3f84915.jfif">
 
   <title>VerArteLoja — Detalles Personalizados en Loja, Ecuador</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,9 +48,14 @@
       <span class="nav-logo-main">Ver<em>Arte</em>Loja</span>
       <span class="nav-logo-sub">En tus mejores momentos</span>
     </a>
-    <div class="nav-actions">
-      <a href="public/Contacto/verarteloja-amte (2).vcf" class="btn btn-gold btn-sm" download>⬇️ Descargar Contacto</a>
-    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#pedido" class="nav-cta">✉️ Hacer Pedido</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- ═══ WHATSAPP FLOAT ══════════════════════════════════════ -->
@@ -221,25 +226,11 @@
         </div>
 
         <div class="form-section-label">💌 Mensaje especial</div>
-        <div class="form-grid cols-1" style="text-align: center; margin-bottom: 2rem;">
-          <img src="public/Contacto/tarjeta de y Para.webp" alt="Tarjeta de Regalo"
-            style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: .5rem;">
-        </div>
-        <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label" for="f-de">De: <sup>*</sup></label>
-            <input id="f-de" class="form-control" type="text" placeholder="Ej: Familia" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="f-para">Para: <sup>*</sup></label>
-            <input id="f-para" class="form-control" type="text" placeholder="Ej: Mamá" required>
-          </div>
-        </div>
         <div class="form-grid cols-1">
           <div class="form-group">
-            <label class="form-label" for="f-mensaje">Mensaje personalizado (Opcional)</label>
+            <label class="form-label" for="f-mensaje">Mensaje para la tarjeta</label>
             <textarea id="f-mensaje" class="form-control"
-              placeholder="Escribe aquí el mensaje breve que irá en la tarjeta del regalo…"></textarea>
+              placeholder="Escribe aquí el mensaje que irá en la tarjeta del regalo…"></textarea>
           </div>
         </div>
 

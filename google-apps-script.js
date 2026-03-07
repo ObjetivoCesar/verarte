@@ -77,7 +77,7 @@ function doPost(e) {
             data.celular || '',
             data.hora || '',
             data.fecha || '',
-            (data.de ? `De: ${data.de}\n` : '') + (data.para ? `Para: ${data.para}\n` : '') + (data.mensaje || ''),
+            data.mensaje || '',
         ]);
 
         return ContentService
