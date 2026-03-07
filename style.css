@@ -680,7 +680,7 @@ h4 {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(30, 10, 20, .85) 0%, rgba(30, 10, 20, .3) 45%, transparent 70%);
+  background: linear-gradient(to top, rgba(30, 10, 20, 0.95) 0%, rgba(30, 10, 20, 0.5) 50%, rgba(30, 10, 20, 0.2) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -699,10 +699,12 @@ h4 {
 
 .card-name {
   font-family: var(--ff-head);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
   color: var(--white);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   margin-bottom: .2rem;
-  line-height: 1.2;
 }
 
 .card-meta {
@@ -1102,6 +1104,13 @@ h4 {
   font-size: 2rem;
   color: var(--rose-pale);
   line-height: 1;
+}
+
+.product-price {
+  font-size: 1.15rem;
+  color: var(--rose-pale);
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .review-text {
