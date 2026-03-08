@@ -139,12 +139,6 @@ const catPageSrc = (page) => {
     return `public/images/catalog/${page}.jpg`;
 };
 const catInfo = (catId) => CATEGORY_DISPLAY.find(c => c.id === catId);
-const calculateShipping = (d) => {
-    if (!d || d <= 0) return 0.00;
-    if (d <= 1.5) return 1.50;
-    if (d < 3.0) return 1.75;
-    return 2.00 + Math.floor(d - 3) * 0.25;
-};
 
 // ─── NAVBAR ───────────────────────────────────────────────────────────────
 function initNavbar() {
@@ -439,7 +433,7 @@ function buildWhatsAppFromForm(data) {
         `3. Barrio: ${data.barrio}`, `4. N° Casa: ${data.numCasa}`,
         `5. Calle Principal: ${data.callePrincipal}`, `6. Calle Secundaria: ${data.calleSecundaria}`,
         `7. Referencia: ${data.referencia}`,
-        `8. Distancia: ${data.distancia} km — *Envío: $${data.envio}*`, '',
+        `8. Envío: *A consultar con Verito* 🚚`, '',
         '*👤 Datos de quien recibe:*',
         `9. Nombre: ${data.destinatario}`, `10. Celular: ${data.celular}`, '',
         '*🕐 Entrega:*', `11. Hora: ${data.hora}`, `12. Fecha: ${data.fecha}`, '',
@@ -450,18 +444,6 @@ function buildWhatsAppFromForm(data) {
 
 function initForm() {
     const form = $('#order-form');
-    const distInput = $('#f-distancia');
-    const shipResult = $('#shipping-result');
-
-    if (distInput) {
-        distInput.addEventListener('input', () => {
-            const val = parseFloat(distInput.value);
-            const cost = calculateShipping(val);
-            shipResult.textContent = `Envío: $${cost.toFixed(2)}`;
-            shipResult.classList.add('pulse');
-            setTimeout(() => shipResult.classList.remove('pulse'), 500);
-        });
-    }
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -469,7 +451,6 @@ function initForm() {
         const feedback = $('#form-feedback');
         const sel = $('#f-codigo');
         const selectedOpt = sel.options[sel.selectedIndex];
-        const distVal = parseFloat(distInput.value || 0);
 
         const data = {
             remitente: $('#f-remitente').value.trim(),
@@ -481,8 +462,6 @@ function initForm() {
             callePrincipal: $('#f-calle1').value.trim(),
             calleSecundaria: $('#f-calle2').value.trim(),
             referencia: $('#f-referencia').value.trim(),
-            distancia: distVal,
-            envio: calculateShipping(distVal).toFixed(2),
             destinatario: $('#f-destinatario').value.trim(),
             celular: $('#f-celular').value.trim(),
             hora: $('#f-hora').value,
@@ -490,7 +469,7 @@ function initForm() {
             mensaje: $('#f-mensaje').value.trim(),
         };
 
-        if (!data.remitente || !data.codigo || !data.destinatario || !data.celular || !distInput.value) {
+        if (!data.remitente || !data.codigo || !data.destinatario || !data.celular) {
             feedback.className = 'form-feedback error-msg';
             feedback.textContent = '⚠️ Por favor completa los campos obligatorios marcados con *.';
             return;
