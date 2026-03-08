@@ -35,8 +35,8 @@ const PRODUCTS = [
 
     // BOUQUETS UNITARIOS (Page 11)
     { code: 'BUR1 (P11)', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 2.50, page: 'p11n.webp', emoji: '🌹' },
-    { code: 'BUGI2 (P11)', name: 'Mini Bouquet con 1 Girasol', cat: 'bouquets', price: 2.50, page: 'p11n.webp', emoji: '🌻' },
-    { code: 'BUR3 (P11)', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 3.50, page: 'p11n.webp', emoji: '🌹' },
+    { code: 'BUGI2 (P11)', name: 'Mini Bouquet con 1 Girasol', cat: 'bouquets', price: 3.50, page: 'p11n.webp', emoji: '🌻' },
+    { code: 'BUR3 (P11)', name: 'Mini Bouquet con 1 Rosa', cat: 'bouquets', price: 2.50, page: 'p11n.webp', emoji: '🌹' },
     { code: 'BUGE4 (P11)', name: 'Mini Bouquet con 1 Gerbera', cat: 'bouquets', price: 3.50, page: 'p11n.webp', emoji: '🌸' },
 
     // BOUQUETS UNITARIOS (Page 12)
@@ -78,12 +78,12 @@ const PRODUCTS = [
     // ARREGLOS CON VINO (Page 18)
     { code: 'AV1 (P18)', name: 'Arreglo con Vino y Girasoles', cat: 'vino', price: 30, page: 'p18n.webp', emoji: '🍷' },
     { code: 'AV2 (P18)', name: 'Arreglo con Vino y Chocolates', cat: 'vino', price: 30, page: 'p18n.webp', emoji: '🍷' },
-    { code: 'AV3 (P18)', name: 'Arreglo con Vino, Rosas y Chocolates', cat: 'vino', price: 25, page: 'p18n.webp', emoji: '🍷' },
-    { code: 'AV4 (P18)', name: 'Arreglo con Vino', cat: 'vino', price: 33, page: 'p18n.webp', emoji: '🍾' },
+    { code: 'AV3 (P18)', name: 'Arreglo con Vino', cat: 'vino', price: 25, page: 'p18n.webp', emoji: '🍷' },
+    { code: 'AV4 (P18)', name: 'Arreglo con Vino, Rosas y Chocolates', cat: 'vino', price: 33, page: 'p18n.webp', emoji: '🍾' },
 
     // ARREGLOS FLORALES (Page 19)
     { code: 'AF1 (P19)', name: 'Florero de Cristal', cat: 'arreglos', price: 22, page: 'p19n.webp', emoji: '🌷' },
-    { code: 'AF2 (P19)', name: 'Arreglo Floral', cat: 'arreglos', price: 25, page: 'p19n.webp', emoji: '🌸' },
+    { code: 'AF2 (P19)', name: 'Florero de Cristal', cat: 'arreglos', price: 25, page: 'p19n.webp', emoji: '🌸' },
     { code: 'AF3 (P19)', name: 'Florero de Cristal', cat: 'arreglos', price: 20, page: 'p19n.webp', emoji: '🌸' },
     { code: 'AF4 (P19)', name: 'Arreglo Floral Grande', cat: 'arreglos', price: 50, page: 'p19n.webp', emoji: '🌻' },
 
@@ -104,7 +104,6 @@ const PRODUCTS = [
     { code: 'AC2 (P23)', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 30, page: 'p23n.webp', emoji: '💎' },
     { code: 'AC3 (P23)', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 30, page: 'p23n.webp', emoji: '💎' },
     { code: 'AC4 (P23)', name: 'Arreglo con Base de Cristal', cat: 'arreglos', price: 40, page: 'p23n.webp', emoji: '💎' },
-    { code: 'AC5 (P23)', name: 'Arreglo con Base de Cristal Premium', cat: 'arreglos', price: 45, page: 'p23n.webp', emoji: '💎' },
 
     // ARREGLOS CON FRUTA (Page 24)
     { code: 'BM1 (P24)', name: 'Arreglo con Fruta y Girasoles', cat: 'fruta', price: 25, page: 'p24n.webp', emoji: '🍓' },
