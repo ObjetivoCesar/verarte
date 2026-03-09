@@ -144,6 +144,7 @@ const catInfo = (catId) => CATEGORY_DISPLAY.find(c => c.id === catId);
 function initNavbar() {
     const hamburger = $('#nav-hamburger');
     const links = $('.nav-links');
+    if (!links) return;
 
     // Create a close button inside the mobile menu
     const closeBtn = document.createElement('button');
@@ -179,6 +180,7 @@ function initNavbar() {
 // ─── CATALOG FILTERS ──────────────────────────────────────────────────────
 function buildFilters() {
     const container = $('#catalog-filters');
+    if (!container) return;
     CATEGORY_DISPLAY.forEach((cat, index) => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn' + (index === 0 ? ' active' : '');
@@ -202,6 +204,7 @@ function filterProducts(catId) {
 // ─── PRODUCT GRID ─────────────────────────────────────────────────────────
 function buildProductGrid() {
     const grid = $('#products-grid');
+    if (!grid) return;
     grid.innerHTML = '';
 
     // Group products by page image for the grid view
@@ -244,6 +247,7 @@ function buildProductGrid() {
 // ─── SEARCH ───────────────────────────────────────────────────────────────
 function initSearch() {
     const input = $('#product-search');
+    if (!input) return;
     const filters = $('#catalog-filters');
     const stateEl = $('#search-state');
     const stateText = $('#search-state-text');
@@ -397,6 +401,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 // ─── FORM ─────────────────────────────────────────────────────────────────
 function buildFormSelect() {
     const sel = $('#f-codigo');
+    if (!sel) return;
     const defaultOpt = document.createElement('option');
     defaultOpt.value = '';
     defaultOpt.textContent = 'Selecciona un detalle…';
@@ -444,6 +449,7 @@ function buildWhatsAppFromForm(data) {
 
 function initForm() {
     const form = $('#order-form');
+    if (!form) return;
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -521,7 +527,8 @@ function initCatalogBtn() {
 
 // ─── OVERLAY CLICK ────────────────────────────────────────────────────────
 function initModalOverlay() {
-    $('#product-modal').addEventListener('click', e => { if (e.target === $('#product-modal')) closeModal(); });
+    const modal = $('#product-modal');
+    if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 }
 
 // ─── INIT ─────────────────────────────────────────────────────────────────

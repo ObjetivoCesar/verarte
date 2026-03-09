@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Realiza tu pedido de detalles personalizados en Loja, Ecuador.">
+    <meta name="keywords" content="pedido, detalles personalizados Loja, regalos únicos Loja, VerArteLoja">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://verarteloja.vercel.app/pedidos.html">
+    <meta property="og:title" content="Realizar Pedido — VerArteLoja">
+    <meta property="og:description" content="Formulario para realizar tu pedido de detalles personalizados.">
+    <meta property="og:image" content="https://verarteloja.vercel.app/public/images/hero2.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="public/images/hero2.png">
+    <link rel="apple-touch-icon" href="public/images/hero2.png">
+
+    <title>Realizar Pedido — VerArteLoja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background:var(--dark);">
+
+    <!-- ═══ WHATSAPP FLOAT ══════════════════════════════════════ -->
+    <a id="whatsapp-float" href="https://wa.me/593999372331" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <span class="wa-tooltip">¡Escríbenos!</span>
+        <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- ═══ ORDER FORM ═══════════════════════════════════════════ -->
+    <section id="pedido" class="order-section" style="min-height: 100vh;">
+        <div class="order-inner" style="padding-top: 2rem;">
+            <div class="t-center" style="margin-bottom:2rem;text-align:center;">
+                <a href="index.html"
+                    style="color:var(--gold);text-decoration:none;font-size:0.9rem;display:inline-block;margin-bottom:1rem;">←
+                    Volver al inicio</a>
+            </div>
+            <div class="section-tag" style="background:rgba(212,175,55,.15);color:var(--gold);">✉️ Formulario de Pedido
+            </div>
+            <h2 class="section-title">Haz tu pedido</h2>
+            <p class="section-sub">Llena el formulario y tu pedido llegará directamente a Verito. 🌸</p>
+
+            <div id="form-feedback" class="form-feedback"></div>
+
+            <form id="order-form" class="form-card" novalidate>
+                <div class="form-section-label">👤 Datos de quien envía</div>
+                <div class="form-grid cols-1">
+                    <div class="form-group">
+                        <label class="form-label" for="f-remitente">1. Nombre y apellido <sup>*</sup></label>
+                        <input id="f-remitente" class="form-control" type="text" placeholder="Tu nombre completo"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-section-label">🎁 Detalle elegido</div>
+                <div class="form-grid cols-1">
+                    <div class="form-group">
+                        <label class="form-label" for="f-codigo">2. Código del detalle <sup>*</sup></label>
+                        <select id="f-codigo" class="form-control" required></select>
+                    </div>
+                </div>
+
+                <div class="form-section-label">📍 Datos de entrega</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="f-barrio">3. Barrio <sup>*</sup></label>
+                        <input id="f-barrio" class="form-control" type="text" placeholder="Nombre del barrio" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="f-numcasa">4. Número de casa</label>
+                        <input id="f-numcasa" class="form-control" type="text" placeholder="N° de casa">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="f-calle1">5. Calle principal <sup>*</sup></label>
+                        <input id="f-calle1" class="form-control" type="text" placeholder="Calle principal" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="f-calle2">6. Calle secundaria</label>
+                        <input id="f-calle2" class="form-control" type="text" placeholder="Calle secundaria">
+                    </div>
+                </div>
+                <div class="form-grid" style="margin-top:1rem;">
+                    <div class="form-group">
+                        <label class="form-label" for="f-referencia">7. Referencia</label>
+                        <input id="f-referencia" class="form-control" type="text" placeholder="Ej: junto al parque…">
+                    </div>
+                </div>
+
+                <div class="form-section-label">🎯 Datos de quien recibe</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="f-destinatario">8. Nombre y apellido <sup>*</sup></label>
+                        <input id="f-destinatario" class="form-control" type="text" placeholder="Nombre de quien recibe"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="f-celular">9. Celular <sup>*</sup></label>
+                        <input id="f-celular" class="form-control" type="tel" placeholder="0999 000 000" required>
+                    </div>
+                </div>
+
+                <div class="form-section-label">🕐 Entrega</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="f-hora">10. Hora <sup>*</sup></label>
+                        <input id="f-hora" class="form-control" type="time" min="07:00" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="f-fecha">11. Fecha <sup>*</sup></label>
+                        <input id="f-fecha" class="form-control" type="date" required>
+                    </div>
+                </div>
+
+                <div class="form-section-label">💌 Mensaje especial</div>
+                <div class="form-grid cols-1">
+                    <div class="form-group">
+                        <label class="form-label" for="f-mensaje">Mensaje para la tarjeta</label>
+                        <img src="public/images/logo/tarjeta De y Para.webp" alt="Vista previa tarjeta"
+                            style="width:100%;max-width:300px;border-radius:var(--r-sm);margin-bottom:1rem;display:block;">
+                        <p class="form-label"
+                            style="margin-top:.5rem;color:var(--gold);font-size:.85rem;font-weight:700;">O
+                            personaliza tu mensaje:</p>
+                        <textarea id="f-mensaje" class="form-control"
+                            placeholder="Escribe aquí el mensaje que irá en la tarjeta del regalo…"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-submit-wrap" style="margin-top:1.8rem;">
+                    <button id="submit-btn" type="submit" class="btn btn-primary btn-full btn-lg">✉️ Enviar
+                        pedido</button>
+                    <p class="form-note">📋 Si está todo configurado, tu pedido se registra en Google Sheets y Verito te
+                        contacta.
+                        Si no, se abrirá WhatsApp con tu pedido ya escrito.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <style>
+        .order-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #3D1A28 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .order-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse at 0% 0%, rgba(194, 24, 91, .2) 0%, transparent 60%), radial-gradient(ellipse at 100% 100%, rgba(201, 168, 76, .08) 0%, transparent 55%);
+        }
+
+        .order-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+        }
+
+        .order-inner .section-title {
+            color: var(--white);
+        }
+
+        .order-inner .section-sub {
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .form-card {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            backdrop-filter: blur(12px);
+            border-radius: var(--r-lg);
+            padding: 2.5rem;
+        }
+
+        .form-section-label {
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+        }
+
+        .form-section-label:first-child {
+            margin-top: 0;
+        }
+
+        .form-section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-grid.cols-1 {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+        }
+
+        .form-label {
+            font-size: .78rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .form-label sup {
+            color: var(--rose-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: .75rem 1rem;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: var(--r-sm);
+            color: var(--white);
+            font-size: .92rem;
+            outline: none;
+            transition: all .2s;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, .3);
+        }
+
+        .form-control:focus {
+            border-color: var(--rose-light);
+            background: rgba(255, 255, 255, .12);
+            box-shadow: 0 0 0 3px rgba(244, 143, 177, .15);
+        }
+
+        select.form-control option {
+            background: var(--dark-mid);
+            color: var(--white);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-submit-wrap {
+            margin-top: 1.8rem;
+        }
+
+        .form-note {
+            font-size: .76rem;
+            color: rgba(255, 255, 255, .4);
+            margin-top: .8rem;
+            text-align: center;
+        }
+
+        .form-feedback {
+            display: none;
+            padding: 1rem 1.2rem;
+            border-radius: var(--r-sm);
+            font-size: .9rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+        }
+
+        .form-feedback.success {
+            background: rgba(46, 125, 50, .2);
+            border: 1px solid rgba(46, 125, 50, .4);
+            color: #81C784;
+            display: block;
+        }
+
+        .form-feedback.error-msg {
+            background: rgba(198, 40, 40, .2);
+            border: 1px solid rgba(198, 40, 40, .4);
+            color: #EF9A9A;
+            display: block;
+        }
+
+        @media(max-width:640px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
