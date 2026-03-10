@@ -400,31 +400,13 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 
 // ─── FORM ─────────────────────────────────────────────────────────────────
 function buildFormSelect() {
-    const sel = $('#f-codigo');
-    if (!sel) return;
-    const defaultOpt = document.createElement('option');
-    defaultOpt.value = '';
-    defaultOpt.textContent = 'Selecciona un detalle…';
-    sel.appendChild(defaultOpt);
-
-    CATEGORY_DISPLAY.forEach(cat => {
-        const group = document.createElement('optgroup');
-        group.label = cat.emoji + ' ' + cat.label;
-        PRODUCTS.filter(p => p.cat === cat.id).forEach(p => {
-            const opt = document.createElement('option');
-            opt.value = p.code;
-            opt.dataset.price = p.price;
-            opt.dataset.name = p.name;
-            opt.textContent = `${p.code} — ${p.name} ($${p.price.toFixed(2)})`;
-            group.appendChild(opt);
-        });
-        sel.appendChild(group);
-    });
+    // Se elimina la generación de <select> porque ahora es un campo de texto libre.
 }
 
 window.selectProductInForm = function (code) {
     const sel = $('#f-codigo');
-    sel.value = code;
+    const p = PRODUCTS.find(x => x.code === code);
+    sel.value = p ? `${p.code} — ${p.name} ($${p.price.toFixed(2)})` : code;
     document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
     setTimeout(() => sel.focus(), 500);
 };
@@ -433,7 +415,7 @@ function buildWhatsAppFromForm(data) {
     const lines = [
         '🌸 *ORDEN DE PEDIDO — VerArteLoja*', '',
         `1. Remitente: ${data.remitente}`,
-        `2. Código: *${data.codigo}* — ${data.producto} ($${data.precio})`, '',
+        `2. Detalle elegido: *${data.codigo}*`, '',
         '*📍 Datos de entrega:*',
         `3. Barrio: ${data.barrio}`, `4. N° Casa: ${data.numCasa}`,
         `5. Calle Principal: ${data.callePrincipal}`, `6. Calle Secundaria: ${data.calleSecundaria}`,
@@ -456,13 +438,12 @@ function initForm() {
         const btn = $('#submit-btn');
         const feedback = $('#form-feedback');
         const sel = $('#f-codigo');
-        const selectedOpt = sel.options[sel.selectedIndex];
 
         const data = {
             remitente: $('#f-remitente').value.trim(),
-            codigo: sel.value,
-            producto: selectedOpt?.dataset.name || '',
-            precio: selectedOpt?.dataset.price || '',
+            codigo: sel.value.trim(),
+            producto: '',
+            precio: '',
             barrio: $('#f-barrio').value.trim(),
             numCasa: $('#f-numcasa').value.trim(),
             callePrincipal: $('#f-calle1').value.trim(),
