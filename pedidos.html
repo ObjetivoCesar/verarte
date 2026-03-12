@@ -90,17 +90,21 @@
                         <label class="form-label" for="f-referencia">7. Referencia</label>
                         <input id="f-referencia" class="form-control" type="text" placeholder="Ej: junto al parque…">
                     </div>
+                    <div class="form-group">
+                        <label class="form-label" for="f-maps">8. Ubicación (Google Maps)</label>
+                        <input id="f-maps" class="form-control" type="url" placeholder="Pega el link de Maps aquí">
+                    </div>
                 </div>
 
                 <div class="form-section-label">🎯 Datos de quien recibe</div>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label class="form-label" for="f-destinatario">8. Nombre y apellido <sup>*</sup></label>
+                        <label class="form-label" for="f-destinatario">9. Nombre y apellido <sup>*</sup></label>
                         <input id="f-destinatario" class="form-control" type="text" placeholder="Nombre de quien recibe"
                             required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="f-celular">9. Celular <sup>*</sup></label>
+                        <label class="form-label" for="f-celular">10. Celular <sup>*</sup></label>
                         <input id="f-celular" class="form-control" type="tel" placeholder="0999 000 000" required>
                     </div>
                 </div>
@@ -108,17 +112,27 @@
                 <div class="form-section-label">🕐 Entrega</div>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label class="form-label" for="f-hora">10. Hora <sup>*</sup></label>
+                        <label class="form-label" for="f-hora">11. Hora <sup>*</sup></label>
                         <input id="f-hora" class="form-control" type="time" min="07:00" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="f-fecha">11. Fecha <sup>*</sup></label>
+                        <label class="form-label" for="f-fecha">12. Fecha <sup>*</sup></label>
                         <input id="f-fecha" class="form-control" type="date" required>
                     </div>
                 </div>
 
                 <div class="form-section-label">💌 Mensaje especial</div>
-                <div class="form-grid cols-1">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="f-de">De: (Para la tarjeta)</label>
+                        <input id="f-de" class="form-control" type="text" placeholder="Ej: Jorge">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="f-para">Para: (Para la tarjeta)</label>
+                        <input id="f-para" class="form-control" type="text" placeholder="Ej: María">
+                    </div>
+                </div>
+                <div class="form-grid cols-1" style="margin-top:1rem;">
                     <div class="form-group">
                         <label class="form-label" for="f-mensaje">Mensaje para la tarjeta</label>
                         <textarea id="f-mensaje" class="form-control"

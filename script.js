@@ -420,11 +420,15 @@ function buildWhatsAppFromForm(data) {
         `3. Barrio: ${data.barrio}`, `4. N° Casa: ${data.numCasa}`,
         `5. Calle Principal: ${data.callePrincipal}`, `6. Calle Secundaria: ${data.calleSecundaria}`,
         `7. Referencia: ${data.referencia}`,
-        `8. Envío: *A consultar con Verito* 🚚`, '',
+        `8. Ubicación (Maps): ${data.maps || '(no especificado)'}`,
+        `🚚 Envío: *A consultar con Verito*`, '',
         '*👤 Datos de quien recibe:*',
         `9. Nombre: ${data.destinatario}`, `10. Celular: ${data.celular}`, '',
         '*🕐 Entrega:*', `11. Hora: ${data.hora}`, `12. Fecha: ${data.fecha}`, '',
-        `💌 Mensaje: ${data.mensaje || '(sin mensaje)'}`,
+        '*💌 Tarjeta:*',
+        `De: ${data.de || '(no especificado)'}`,
+        `Para: ${data.para || '(no especificado)'}`,
+        `Mensaje: ${data.mensaje || '(sin mensaje)'}`,
     ];
     return `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
 }
@@ -449,10 +453,13 @@ function initForm() {
             callePrincipal: $('#f-calle1').value.trim(),
             calleSecundaria: $('#f-calle2').value.trim(),
             referencia: $('#f-referencia').value.trim(),
+            maps: $('#f-maps').value.trim(),
             destinatario: $('#f-destinatario').value.trim(),
             celular: $('#f-celular').value.trim(),
             hora: $('#f-hora').value,
             fecha: $('#f-fecha').value,
+            de: $('#f-de').value.trim(),
+            para: $('#f-para').value.trim(),
             mensaje: $('#f-mensaje').value.trim(),
         };
 
